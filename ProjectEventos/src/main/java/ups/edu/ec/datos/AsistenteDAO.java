@@ -1,6 +1,7 @@
 package ups.edu.ec.datos;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import ups.edu.ec.modelo.Asistente;
@@ -8,6 +9,7 @@ import ups.edu.ec.modelo.Asistente;
 @Stateless
 public class AsistenteDAO {
 	
+	@Inject
 	private EntityManager em;
 	
 	public void insertar (Asistente a) {
@@ -32,6 +34,7 @@ public class AsistenteDAO {
 		Asistente a = leer(id);
 		
 		em.remove(a);
+		
 	}
 
 }
