@@ -32,7 +32,6 @@ public class AsistenteDAO {
 		Asistente a = leer(id);
 		
 		em.remove(a);
-		em.remove(a);
 	}
 
 }
