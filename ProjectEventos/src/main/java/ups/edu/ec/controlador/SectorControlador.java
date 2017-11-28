@@ -1,5 +1,5 @@
 package ups.edu.ec.controlador;
 
-public class yo {
+public class SectorControlador {
 
 }

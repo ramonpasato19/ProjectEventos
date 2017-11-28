@@ -1,5 +1,5 @@
 package ups.edu.ec.controlador;
 
-public class per {
+public class ParroquiaControlador {
 
 }
