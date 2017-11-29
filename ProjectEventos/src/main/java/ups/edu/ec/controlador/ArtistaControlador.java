@@ -15,6 +15,13 @@ public class ArtistaControlador {
 	
 	@Inject
 	private ArtistaDAO adao;
+	priavate Aritsta artista=null;
+	priavte List<Artista>artistas;
+	
+	
+	
+	@Inject
+	private ArtistaDAO adao;
 	private Artista artista=null;
 	private List<Artista>artistas;
 	
