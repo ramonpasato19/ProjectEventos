@@ -36,5 +36,12 @@ public class AsistenteDAO {
 		em.remove(a);
 		
 	}
+	
+	
+	public List<Asistente> listadoAsistente(){
+		Query query = em.createQuery("SELECT p FROM Persona p", Asistente.class);
+		List<Asistente> listado=query.getResultList();
+		return listado;
+	}
 
 }
