@@ -48,7 +48,7 @@ public class ArtistaControlador {
 		System.out.println("Cargando datos de personas a editar" + id);
 		artista=adao.leer(id);
 		//spersona = pdao.leer(id);
-		return "crear-persona";
+		return "crear-artista";
 	}
 	
 	
