@@ -40,7 +40,7 @@ public class ArtistaDAO {
 		
 	}
 	
-	public List<Artista> listadoPersonas(){
+	public List<Artista> listadoArtistas(){
 		Query query = em.createQuery("SELECT p FROM Persona p", Artista.class);
 		List<Artista> listado=query.getResultList();
 		return listado;

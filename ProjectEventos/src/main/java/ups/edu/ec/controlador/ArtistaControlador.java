@@ -40,15 +40,16 @@ public class ArtistaControlador {
 	
 	//##################################
 
-	/*public void loadPersonas() {
-		artistas = adao.listadoPersonas();
+	public void loadArtistas() {
+		artistas = adao.listadoArtistas();
 	}
 	
 	public String loadDatosEditar(int id) {
 		System.out.println("Cargando datos de personas a editar" + id);
-		persona = pdao.leer(id);
+		artista=adao.leer(id);
+		//spersona = pdao.leer(id);
 		return "crear-persona";
-	}*/
+	}
 	
 	
 	public String Guardar() {
