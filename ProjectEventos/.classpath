@@ -64,5 +64,35 @@
 			<attribute name="maven.scope" value="test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/mauricio/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="javax.inject"/>
+			<attribute name="maven.artifactId" value="javax.inject"/>
+			<attribute name="maven.version" value="1"/>
+			<attribute name="maven.scope" value="provided"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/mauricio/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="org.hibernate.javax.persistence"/>
+			<attribute name="maven.artifactId" value="hibernate-jpa-2.1-api"/>
+			<attribute name="maven.version" value="1.0.0.Final"/>
+			<attribute name="maven.scope" value="provided"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/mauricio/.m2/repository/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/1.0.0.Final/jboss-ejb-api_3.2_spec-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="org.jboss.spec.javax.ejb"/>
+			<attribute name="maven.artifactId" value="jboss-ejb-api_3.2_spec"/>
+			<attribute name="maven.version" value="1.0.0.Final"/>
+			<attribute name="maven.scope" value="provided"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
