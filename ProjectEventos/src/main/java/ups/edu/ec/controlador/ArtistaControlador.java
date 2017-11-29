@@ -18,32 +18,29 @@ public class ArtistaControlador {
 	priavate Aritsta artista=null;
 	priavte List<Artista>artistas;
 	
-	
-	
-	@Inject
-	private ArtistaDAO adao;
-	private Artista artista=null;
-	private List<Artista>artistas;
-	
-	
-	public ArtistaDAO getAdao() {
+	public ArtistaDAO get Adao(){
 		return adao;
 	}
-	public void setAdao(ArtistaDAO adao) {
+	
+	public void setAdao(ArtistaDAO adao){
 		this.adao = adao;
 	}
-	public Artista getArtista() {
+	
+	public Artista getArtista(){
 		return artista;
 	}
+	
 	public void setArtista(Artista artista) {
 		this.artista = artista;
 	}
+	
 	public List<Artista> getArtistas() {
 		return artistas;
 	}
-	public void setArtistas(List<Artista> artistas) {
+	public void setArtistas(List<Artista> artistas){
 		this.artistas = artistas;
 	}
+	
 	
 	//##################################
 
