@@ -19,11 +19,6 @@ public class ArtistaControlador {
 	private List<Artista>artistas;
 	
 	
-	
-	
-	
-	
-	
 	public ArtistaDAO getAdao() {
 		return adao;
 	}

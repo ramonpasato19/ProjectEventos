@@ -1,9 +1,13 @@
 package ups.edu.ec.datos;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
+import ec.edu.ups.appdis.crudpersona.modelo.Persona;
 import ups.edu.ec.modelo.Artista;
 
 @Stateless
@@ -34,6 +38,12 @@ public class ArtistaDAO {
 		
 		em.remove(a);
 		
+	}
+	
+	public List<Artista> listadoPersonas(){
+		Query query = em.createQuery("SELECT p FROM Persona p", Artista.class);
+		List<Artista> listado=query.getResultList();
+		return listado;
 	}
 
 }
