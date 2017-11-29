@@ -37,4 +37,24 @@ private AsistenteDAO asdao;
 	}
 	
 	
+	
+	public void loadAsistentes() {
+		asistentes = asdao.listadoAsistentes();
+	}
+	public String loadDatosEditar(int id){
+		//System.out.println("Cargando datos de personas a editar" + id);
+		System.out.println("Cargando datos de personas a editar" + id);
+		asistente=asdao.leer(id);
+		
+		
+		return "crear-asistente";
+		
+	}
+
+	public String Guardar() {
+		System.out.println(asistente);
+		
+		return null;
+		
+	}
 }
