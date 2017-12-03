@@ -37,6 +37,10 @@ public class PersonaDAO {
 	}
 	
 	
-	
+	public List<Persona> listadoPersonas(){
+		Query query = em.createQuery("SELECT per FROM Persona per", Persona.class);
+		List<Persona> listado=query.getResultList();
+		return listado;
+	}
 
 }
