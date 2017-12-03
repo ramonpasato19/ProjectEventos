@@ -16,30 +16,39 @@ public class ArtistaDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar (Artista a) {
+	public void guardar(Artista art) {
+		Artista aux = leer(art.getCodigo());
+		if(aux!=null){
+			actualizar(art);
+		}else {
+			insertar(art);
+		}
 		
-		em.persist(a);
 	}
 	
-	public void actualizar(Artista a) {
+	public void insertar (Artista art) {
 		
-		em.merge(a);
+		em.persist(art);
+	}
+
+	public void actualizar(Artista art) {
+		
+		em.merge(art);
 	}
 	
 	public Artista leer(int id) {
-		Artista a = em.find(Artista.class, id);
+		Artista art = em.find(Artista.class, id);
 		
-		return a;
+		return art;
 	}
 	
 	public void borrar(int id) {
 		
-		Artista a =leer(id);
+		Artista art =leer(id);
 		
-		em.remove(a);
+		em.remove(art);
 		
 	}
-	
 	
 	
 	public List<Artista> listadoArtistas(){
