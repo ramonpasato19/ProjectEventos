@@ -64,6 +64,11 @@ public class ArtistaControlador {
 		
 	}
 	
+	public String borrar(int id) {
+		artdao.borrar(id);
+		loadArtistas();
+		return "listado-artistas";
+	}
 	
 
 
