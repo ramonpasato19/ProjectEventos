@@ -14,28 +14,40 @@ public class GastronomiaDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar(Gastronomia g) {
+	
+	public void guardar(Gastronomia gas) {
+		Gastronomia aux = leer(gas.getCodigo());
+		if(aux!=null){
+			actualizar(gas);
+		}else {
+			insertar(gas);
+		}
 		
-		em.persist(g);
+	}
+
+	
+	public void insertar(Gastronomia gas) {
+		
+		em.persist(gas);
 	}
 	
-	public void actualizar (Gastronomia g) {
+	public void actualizar (Gastronomia gas) {
 		
-		em.merge(g);
+		em.merge(gas);
 	}
 	
 	public Gastronomia leer(int id) {
 		
-		Gastronomia g = em.find(Gastronomia.class, id);
+		Gastronomia gas = em.find(Gastronomia.class, id);
 		
-		return g;
+		return gas;
 	}
 	
 	public void borrar (int id) {
 		
-		Gastronomia g = leer(id);
+		Gastronomia gas = leer(id);
 		
-		em.remove(g);
+		em.remove(gas);
 	}
 	
 	
