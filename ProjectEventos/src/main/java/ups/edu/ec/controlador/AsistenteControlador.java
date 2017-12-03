@@ -12,16 +12,16 @@ import ups.edu.ec.modelo.Asistente;
 @ManagedBean
 public class AsistenteControlador {
 	
-private AsistenteDAO asdao;
+	private AsistenteDAO asidao;
 	private Asistente asistente=null;
 	private List<Asistente> asistentes;
 	
-	public AsistenteDAO getAsdao() {
-		return asdao;
-	}
 	
-	public void setAsdao(AsistenteDAO asdao) {
-		this.asdao = asdao;
+	public AsistenteDAO getAsidao() {
+		return asidao;
+	}
+	public void setAsidao(AsistenteDAO asidao) {
+		this.asidao = asidao;
 	}
 	public Asistente getAsistente() {
 		return asistente;
@@ -36,25 +36,31 @@ private AsistenteDAO asdao;
 		this.asistentes = asistentes;
 	}
 	
-	
+
 	
 	public void loadAsistentes() {
-		asistentes = asdao.listadoAsistentes();
+		asistentes = asidao.listadoAsistentes();
 	}
 	public String loadDatosEditar(int id){
-		//System.out.println("Cargando datos de personas a editar" + id);
 		System.out.println("Cargando datos de personas a editar" + id);
-		asistente=asdao.leer(id);
-		
-		
+		asistente = asidao.leer(id);
 		return "crear-asistente";
 		
 	}
 
-	public String Guardar() {
+	public String guardar() {
 		System.out.println(asistente);
+		asidao.guardar(asistente);
+		loadAsistentes();
+		return "listado-asistentes";
 		
-		return null;
+	}
+	
+	
+	private String borrar(int id) {
 		
+		asidao.borrar(id);
+		loadAsistentes();
+		return "listado-asistentes";
 	}
 }
