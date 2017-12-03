@@ -63,4 +63,10 @@ public class CategoriaControlador {
 		return "listado-categorias";
 	}
 	
+	public String borrar(int id) {
+		catdao.borrar(id);
+		loadCategorias();
+
+		return "listado-categorias";
+	}
 }
