@@ -35,9 +35,9 @@ public class CategoriaDAO {
 		em.remove(c);
 	}
 	
-	public List<Asistente> listadoCategorias(){
+	public List<Categoria> listadoCategorias(){
 		Query query = em.createQuery("SELECT cat FROM Categoria cat", Categoria.class);
-		List<Asistente> listado=query.getResultList();
+		List<Categoria> listado=query.getResultList();
 		return listado;
 	}
 
