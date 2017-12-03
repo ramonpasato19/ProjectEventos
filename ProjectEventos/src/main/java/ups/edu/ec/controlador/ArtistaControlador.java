@@ -14,53 +14,57 @@ import ups.edu.ec.modelo.Artista;
 public class ArtistaControlador {
 	
 	@Inject
-	private ArtistaDAO adao;
-	priavate Aritsta artista=null;
-	priavte List<Artista>artistas;
+	private ArtistaDAO artdao;
+	private Artista artista;
+	private List<Artista>artistas;
 	
-	public ArtistaDAO get Adao(){
-		return adao;
+	@PostConstruct
+	public void init() {
+		artista= new Artista();
+		loadArtistas();
 	}
 	
-	public void setAdao(ArtistaDAO adao){
-		this.adao = adao;
-	}
 	
-	public Artista getArtista(){
+	public ArtistaDAO getArtdao() {
+		return artdao;
+	}
+	public void setArtdao(ArtistaDAO artdao) {
+		this.artdao = artdao;
+	}
+	public Artista getArtista() {
 		return artista;
 	}
-	
 	public void setArtista(Artista artista) {
 		this.artista = artista;
 	}
-	
 	public List<Artista> getArtistas() {
 		return artistas;
 	}
-	public void setArtistas(List<Artista> artistas){
+	public void setArtistas(List<Artista> artistas) {
 		this.artistas = artistas;
 	}
 	
 	
-	//##################################
 	public void loadArtistas() {
-		artistas = adao.listadoArtistas();
+		artistas = artdao.listadoArtistas();
 	}
 	
 	public String loadDatosEditar(int id) {
 		System.out.println("Cargando datos de artistas a editar" + id);
-		artista=adao.leer(id);
+		artista = artdao.leer(id);
 		return "crear-artista";
 	}
 	
 	
-	
-	
-	public String Guardar() {
+	public String guardar() {
 		System.out.println(artista);
-		
-		return null;
+		artdao.guardar(artista);
+		loadArtistas();
+		return "listado-artistas";
 		
 	}
+	
+	
+
 
 }
