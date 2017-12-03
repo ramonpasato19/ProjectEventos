@@ -12,30 +12,39 @@ public class SectorDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar(Sector s) {
+	public void guardar(Sector sec) {
+		Sector aux = leer(sec.getCodigo());
+		if(aux!=null){
+			actualizar(sec);
+		}else {
+			insertar(sec);
+		}
 		
-		em.persist(s);
+	}
+	public void insertar(Sector sec) {
+		
+		em.persist(sec);
 		
 	}
 	
-	public void actualizar(Sector s) {
+	public void actualizar(Sector sec) {
 		
-		em.merge(s);
+		em.merge(sec);
 	}
 	
 	public Sector leer(int id) {
-		Sector s = em.find(Sector.class, id);
+		Sector sec = em.find(Sector.class, id);
 		
-		return s;
+		return sec;
 	}
 	
 	public void borrar (int id) {
 		
-		Sector s = leer(id);
+		Sector sec = leer(id);
 		
-		em.remove(s);
+		em.remove(sec);
 	}
-	
+
 	public List<Sector> listadoSectores(){
 		Query query = em.createQuery("SELECT sec FROM Sector sec", Sector.class);
 		List<Sector> listado=query.getResultList();
