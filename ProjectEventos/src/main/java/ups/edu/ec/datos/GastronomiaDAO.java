@@ -39,9 +39,9 @@ public class GastronomiaDAO {
 	}
 	
 	
-	public List<Artista> listadoGastronomias(){
+	public List<Gastronomia> listadoGastronomias(){
 		Query query = em.createQuery("SELECT gas FROM Gastronomia gas", Gastronomia.class);
-		List<Artista> listado=query.getResultList();
+		List<Gastronomia> listado=query.getResultList();
 		return listado;
 	}
 	
