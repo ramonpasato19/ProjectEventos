@@ -12,27 +12,37 @@ public class PersonaDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar(Persona p) {
-		em.persist(p);
+	public void guardar(Persona per) {
+		Persona aux = leer(per.getCodigo());
+		if(aux!=null){
+			actualizar(per);
+		}else {
+			insertar(per);
+		}
+		
 	}
 	
-	public void actualizar(Persona p) {
+	public void insertar(Persona per) {
+		em.persist(per);
+	}
+	
+	public void actualizar(Persona per) {
 		
-		em.merge(p);
+		em.merge(per);
 	}
 	
 	public Persona leer(int id) {
 		
-		Persona p = em.find(Persona.class, id);
+		Persona per = em.find(Persona.class, id);
 		
-		return p;
+		return per;
 	}
 	
 	public void borrar (int id) {
 		
-		Persona p = leer(id);
+		Persona per = leer(id);
 		
-		em.remove(p);
+		em.remove(per);
 		
 	}
 	
