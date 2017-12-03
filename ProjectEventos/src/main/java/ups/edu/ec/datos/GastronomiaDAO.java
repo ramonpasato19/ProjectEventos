@@ -38,5 +38,13 @@ public class GastronomiaDAO {
 		em.remove(g);
 	}
 	
+	
+	public List<Artista> listadoGastronomias(){
+		Query query = em.createQuery("SELECT gas FROM Gastronomia gas", Gastronomia.class);
+		List<Artista> listado=query.getResultList();
+		return listado;
+	}
+	
+	
 
 }
