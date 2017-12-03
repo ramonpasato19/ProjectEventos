@@ -35,5 +35,11 @@ public class SectorDAO {
 		
 		em.remove(s);
 	}
+	
+	public List<Sector> listadoSectores(){
+		Query query = em.createQuery("SELECT sec FROM Sector sec", Sector.class);
+		List<Sector> listado=query.getResultList();
+		return listado;
+	}
 
 }
