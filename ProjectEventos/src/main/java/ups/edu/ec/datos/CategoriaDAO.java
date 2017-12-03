@@ -12,27 +12,36 @@ public class CategoriaDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar (Categoria c) {
+	public void guardar(Categoria cat) {
+		Categoria aux = leer(cat.getCodigo());
+		if(aux!=null){
+			actualizar(cat);
+		}else {
+			insertar(cat);
+		}
 		
-		em.persist(c);
+	}
+	public void insertar (Categoria cat) {
+		
+		em.persist(cat);
 		
 	}
 	
-	public void actualizar (Categoria c) {
-		em.merge(c);
+	public void actualizar (Categoria cat) {
+		em.merge(cat);
 	}
 	
 	public Categoria leer (int id) {
 		
-		Categoria c = em.find(Categoria.class, id);
+		Categoria cat = em.find(Categoria.class, id);
 		
-		return c;
+		return cat;
 	}
 	
 	public void borrar (int id) {
-		Categoria c = leer(id);
+		Categoria cat = leer(id);
 		
-		em.remove(c);
+		em.remove(cat);
 	}
 	
 	public List<Categoria> listadoCategorias(){
