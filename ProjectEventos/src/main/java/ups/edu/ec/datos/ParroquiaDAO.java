@@ -35,6 +35,14 @@ public class ParroquiaDAO {
 	
 		em.remove(p);
 	}
+	
+	
+	
+	public List<Artista> listadoParroquias(){
+		Query query = em.createQuery("SELECT par FROM Parroquia par", Parroquia.class);
+		List<Artista> listado=query.getResultList();
+		return listado;
+	}
 
 
 }
