@@ -38,5 +38,13 @@ public class CantonDAO {
 		em.remove(c);
 		
 	}
+	
+	public List<Artista> listadoCantones(){
+		Query query = em.createQuery("SELECT can FROM Canton can", Canton.class);
+		List<Artista> listado=query.getResultList();
+		return listado;
+		
+		
+	}
 
 }
