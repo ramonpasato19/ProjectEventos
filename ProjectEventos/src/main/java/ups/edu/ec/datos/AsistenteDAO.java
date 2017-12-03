@@ -12,31 +12,40 @@ public class AsistenteDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar (Asistente a) {
+	public void guardar(Asistente asi) {
+		Asistente aux = leer(asi.getCodigo());
+		if(aux!=null){
+			actulizar(asi);
+		}else {
+			insertar(asi);
+		}
 		
-		em.persist(a);
 	}
 	
-	public void actulizar (Asistente a) {
+	public void insertar (Asistente asi) {
 		
-		em.merge(a);
+		em.persist(asi);
+	}
+	
+	public void actulizar (Asistente asi) {
+		
+		em.merge(asi);
 	}
 	
 	public Asistente leer(int id) {
 		
-		Asistente a = em.find(Asistente.class, id);
+		Asistente asi = em.find(Asistente.class, id);
 		
-		return a;
+		return asi;
 	}
 	
 	public void borrar(int id) {
 		
-		Asistente a = leer(id);
+		Asistente asi = leer(id);
 		
-		em.remove(a);
+		em.remove(asi);
 		
 	}
-	
 	
 	public List<Asistente> listadoAsistentes(){
 		Query query = em.createQuery("SELECT asi FROM Asistente asi", Asistente.class);
