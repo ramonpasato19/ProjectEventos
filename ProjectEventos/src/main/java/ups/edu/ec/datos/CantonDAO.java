@@ -12,30 +12,40 @@ public class CantonDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar(Canton c) {
+	public void guardar(Canton can) {
+		Canton aux = leer(can.getCodigo());
+		if(aux!=null){
+			actualizar(can);
+		}else {
+			insertar(can);
+		}
 		
-		em.persist(c);
 	}
 	
-	public void actualizar(Canton c) {
+	public void insertar(Canton can) {
 		
-		em.merge(c);
+		em.persist(can);
+	}
+	
+	public void actualizar(Canton can) {
+		
+		em.merge(can);
 		
 	}
 	
 	public Canton leer(int id) {
 		
-		Canton c = em.find(Canton.class, id);
+		Canton can = em.find(Canton.class, id);
 		
-		return c;
+		return can;
 		
 	}
 	
 	public void borarr(int id) {
 		
-		Canton c = leer(id);
+		Canton can = leer(id);
 		
-		em.remove(c);
+		em.remove(can);
 		
 	}
 	
