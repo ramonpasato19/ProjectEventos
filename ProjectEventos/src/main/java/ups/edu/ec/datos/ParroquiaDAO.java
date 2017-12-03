@@ -12,28 +12,38 @@ public class ParroquiaDAO {
 	@Inject
 	private EntityManager em;
 	
-	public void insertar (Parroquia p) {
+	public void guardar(Parroquia par) {
+		Parroquia aux = leer(par.getCodigo());
+		if(aux!=null){
+			actualizar(par);
+		}else {
+			insertar(par);
+		}
 		
-		em.persist(p);
 	}
 	
-	public void actualisar (Parroquia p) {
+	public void insertar (Parroquia par) {
 		
-		em.merge(p);
+		em.persist(par);
+	}
+	
+	public void actualizar (Parroquia par) {
+		
+		em.merge(par);
 	}
 	
 	public Parroquia leer(int id) {
 		
-		Parroquia p = em.find(Parroquia.class, id);
+		Parroquia par = em.find(Parroquia.class, id);
 		
-		return p;
+		return par;
 	}
 
 	
 	public void eliminar(int id) {
-		Parroquia p = leer(id);
+		Parroquia par = leer(id);
 	
-		em.remove(p);
+		em.remove(par);
 	}
 	
 	
