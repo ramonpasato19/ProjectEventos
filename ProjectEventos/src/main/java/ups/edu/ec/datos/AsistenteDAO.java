@@ -38,10 +38,12 @@ public class AsistenteDAO {
 	}
 	
 	
-	public List<Asistente> listadoAsistente(){
-		Query query = em.createQuery("SELECT p FROM Persona p", Asistente.class);
+	public List<Asistente> listadoAsistentes(){
+		Query query = em.createQuery("SELECT asi FROM Asistente asi", Asistente.class);
 		List<Asistente> listado=query.getResultList();
 		return listado;
 	}
+
+
 
 }
