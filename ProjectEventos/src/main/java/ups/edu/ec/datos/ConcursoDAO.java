@@ -14,5 +14,49 @@ import ups.edu.ec.modelo.Evento;
 @Stateless
 public class ConcursoDAO {
 
+	@Inject
+	private EntityManager em;
+	
+	
+	public void guardar(Concurso con) {
+		Concurso aux = leer(con.getCodigo());
+		if(aux!=null){
+			actualizar(con);
+		}else {
+			insertar(con);
+		}
+		
+	}
+	
+public void insertar(Concurso con) {
+		
+		em.persist(con);
+	}
+	
+	public void actualizar (Concurso con) {
+		
+		em.merge(con);
+	}
+	
+	public Concurso leer(int id) {
+		
+		Concurso con = em.find(Concurso.class, id);
+		
+		return con;
+	}
+	
+	public void borrar (int id) {
+		
+		Concurso con = leer(id);
+		
+		em.remove(con);
+	}
+	
+	
+	public List<Concurso> listadoConcursos(){
+		Query query = em.createQuery("SELECT con FROM Concuro con", Concurso.class);
+		List<Concurso> listado=query.getResultList();
+		return listado;
+	}
 	
 }
