@@ -17,6 +17,12 @@ public class EventoControlador {
 	private List<Evento> eventos;
 	
 	
+	@PostConstruct
+	public void init() {
+		evento = new Evento();
+		loadEventos();
+	}
+	
 	public EventoDAO getEvedao() {
 		return evedao;
 	}
