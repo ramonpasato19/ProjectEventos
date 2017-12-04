@@ -45,8 +45,6 @@ public class SectorControlador {
 		sectores = secdao.listadoSectores();
 		
 	}
-	
-	
 	public String loadDatosEditar(int id) {
 		System.out.println("Cargando datos de personas a editar" + id);
 		sector = secdao.leer(id);
