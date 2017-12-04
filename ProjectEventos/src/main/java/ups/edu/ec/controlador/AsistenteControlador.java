@@ -57,7 +57,7 @@ public class AsistenteControlador {
 	}
 	
 	
-	private String borrar(int id) {
+	public String borrar(int id) {
 		
 		asidao.borrar(id);
 		loadAsistentes();
