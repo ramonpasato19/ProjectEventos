@@ -17,6 +17,13 @@ public class AsistenteControlador {
 	private List<Asistente> asistentes;
 	
 	
+	@PostConstruct
+	public void init() {
+		asistente =  new Asistente();
+		loadAsistentes();
+		
+	}
+	
 	public AsistenteDAO getAsidao() {
 		return asidao;
 	}
