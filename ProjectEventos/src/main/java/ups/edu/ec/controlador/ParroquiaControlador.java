@@ -13,6 +13,7 @@ import ups.edu.ec.modelo.Parroquia;
 
 @ManagedBean
 public class ParroquiaControlador {
+	
 	@Inject
 	private ParroquiaDAO pardao;
 	private Parroquia parroquia;

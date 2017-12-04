@@ -4,13 +4,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
 
 import ups.edu.ec.datos.SectorDAO;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
 public class SectorControlador {
-
+	@Inject
 	private SectorDAO secdao;
 	private Sector sector;
 	private List<Sector> sectores;

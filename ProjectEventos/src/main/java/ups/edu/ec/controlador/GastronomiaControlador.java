@@ -62,7 +62,6 @@ public class GastronomiaControlador {
 	
 	
 	public String borrar(int id) {
-		//System.out.println("Cargando datos de personas a editar" + id);
 		gasdao.borrar(id);
 		loadGastronomias();
 		return "listado-gastronomias";

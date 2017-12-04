@@ -4,6 +4,7 @@ package ups.edu.ec.controlador;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import ups.edu.ec.datos.AsistenteDAO;
