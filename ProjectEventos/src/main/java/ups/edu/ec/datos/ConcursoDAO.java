@@ -54,7 +54,7 @@ public void insertar(Concurso con) {
 	
 	
 	public List<Concurso> listadoConcursos(){
-		Query query = em.createQuery("SELECT con FROM Concuro con", Concurso.class);
+		Query query = em.createQuery("SELECT con FROM Concurso con", Concurso.class);
 		List<Concurso> listado=query.getResultList();
 		return listado;
 	}
