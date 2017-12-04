@@ -1,9 +1,9 @@
 package ups.edu.ec.controlador;
 
 import java.util.List;
-
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-
+import javax.inject.Inject;
 
 import ups.edu.ec.datos.EventoDAO;
 import ups.edu.ec.modelo.Evento;
@@ -11,7 +11,7 @@ import ups.edu.ec.modelo.Evento;
 
 @ManagedBean
 public class EventoControlador {
-
+        @Inject
 	private EventoDAO evedao;
 	private Evento evento;
 	private List<Evento> eventos;
