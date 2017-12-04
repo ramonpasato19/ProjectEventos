@@ -14,10 +14,7 @@ import ups.edu.ec.modelo.Artista;
 @ManagedBean
 public class ArtistaControlador {
 	
-	@Inject
-	private ArtistaDAO artdao;
-	private Artista artista;
-	private List<Artista>artistas;
+
 	
 	@PostConstruct
 	public void init() {
