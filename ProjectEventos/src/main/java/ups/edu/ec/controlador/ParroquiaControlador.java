@@ -11,6 +11,7 @@ import javax.inject.Inject;
 
 import ups.edu.ec.datos.ParroquiaDAO;
 import ups.edu.ec.modelo.Parroquia;
+import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
 @SessionScoped
@@ -21,12 +22,34 @@ public class ParroquiaControlador {
 	private Parroquia parroquia;
 	private List<Parroquia> parroquias;
 	
+	private int id;
+	
 	
 	@PostConstruct
 	public void init() {
 	parroquia = new Parroquia();
-	loadParroquias();
+	parroquia.addSector(new Sector());
+	//loadParroquias();
 	}
+
+
+	
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
 
 
 	public ParroquiaDAO getPardao() {
@@ -87,5 +110,11 @@ public class ParroquiaControlador {
 		pardao.borrar(id);
 		loadParroquias();
 		return "listado-parroquias";
+	}
+	
+	public String addSector() {
+	parroquia.addSector(new Sector());
+	
+	return null;
 	}
 }

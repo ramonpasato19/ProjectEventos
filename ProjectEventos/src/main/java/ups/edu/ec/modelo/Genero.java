@@ -15,8 +15,6 @@ public class Genero {
 	
 	
 	@NotNull
-	@Column(name="gen_nombre", length=10)
-	@Size(min=10,max=25)
 	private String nombre;
 
 

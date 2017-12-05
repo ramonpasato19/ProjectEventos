@@ -44,6 +44,21 @@
 	
 </h:panelGrid>
 <br/>
+
+<h:dataTable value="#{artistaControlador.artista.generos}" var="genero">
+		<h:column >
+		<f:facet name="header">Codigo</f:facet>
+		<h:inputText value="#{genero.codigo}"/>
+		</h:column>
+		
+		<h:column >
+		<f:facet name="header">Nombre</f:facet>
+		<h:inputText value="#{genero.nombre}"/>
+		</h:column>
+		
+		
+	
+	</h:dataTable>
 	<h:panelGrid >
 	<h:commandButton action="#{artistaControlador.guardar()}" value="Guardar" class="btn btn- btn-primary center-block"    />
 </h:panelGrid>

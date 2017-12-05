@@ -8,6 +8,8 @@ import javax.inject.Inject;
 
 import ups.edu.ec.datos.ArtistaDAO;
 import ups.edu.ec.modelo.Artista;
+import ups.edu.ec.modelo.Genero;
+import ups.edu.ec.modelo.Sector;
 
 
 
@@ -20,13 +22,32 @@ public class ArtistaControlador {
 	private Artista artista;
 	private List<Artista>artistas;
 	
+	private int id;
+	
 	@PostConstruct
 	public void init() {
 		artista= new Artista();
-		loadArtistas();
+		artista.addGenero(new Genero());
+		//loadArtistas();
 	}
 	
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
 	public ArtistaDAO getArtdao() {
 		return artdao;
 	}
@@ -79,6 +100,10 @@ public class ArtistaControlador {
 		return "listado-artistas";
 	}
 	
-
+	public String addGenero() {
+		artista.addGenero(new Genero());
+		
+		return null;
+		}
 
 }

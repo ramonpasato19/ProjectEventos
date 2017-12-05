@@ -1,5 +1,7 @@
 package ups.edu.ec.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,22 +11,19 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-public class Sector {
+public class Sector{
+	
+	
 	
 	@Id
-	@GeneratedValue
 	private int codigo;
 	
 	@NotNull
-	@Column(name="sec_nombre", length=10)
-	@Size(min=6,max=25)
 	private String nombre;
 	
 	
 	
 	@NotNull
-	@Column(name="sec_direccion", length=10)
-	@Size(min=25,max=60)
 	private String direccion;
 
 
