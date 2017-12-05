@@ -3,8 +3,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-
-import org.jboss.arquillian.core.api.annotation.Inject;
+import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 
 import ups.edu.ec.datos.ArtistaDAO;
 import ups.edu.ec.modelo.Artista;
@@ -12,6 +12,7 @@ import ups.edu.ec.modelo.Artista;
 
 
 @ManagedBean
+@SessionScoped
 public class ArtistaControlador {
 	
 	@Inject
@@ -39,12 +40,19 @@ public class ArtistaControlador {
 		this.artista = artista;
 	}
 	public List<Artista> getArtistas() {
+		if(artistas==null)
+			loadArtistas();
 		return artistas;
 	}
 	public void setArtistas(List<Artista> artistas) {
 		this.artistas = artistas;
 	}
 	
+	public void leerArtista(int codigo) {
+		artista=artdao.leer(codigo);
+		System.out.println("cargando datos de artista"+ artista);
+		
+	}
 	
 	public void loadArtistas() {
 		artistas = artdao.listadoArtistas();

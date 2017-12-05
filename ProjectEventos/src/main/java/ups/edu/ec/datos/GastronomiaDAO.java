@@ -7,8 +7,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import org.ietf.jgss.GSSContext;
-
 import ups.edu.ec.modelo.Gastronomia;
 
 @Stateless

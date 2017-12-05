@@ -4,12 +4,15 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.SectorDAO;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
+@SessionScoped
 public class SectorControlador {
 	@Inject
 	private SectorDAO secdao;
@@ -36,18 +39,26 @@ public class SectorControlador {
 		this.sector = sector;
 	}
 	public List<Sector> getSectores() {
+		if(sectores==null)
+			loadSectores();
 		return sectores;
 	}
 	public void setSectores(List<Sector> sectores) {
 		this.sectores = sectores;
 	}
 	
+	
+	public void leerSector(int codigo) {
+		sector=secdao.leer(codigo);
+		System.out.println("cargando datos de sector"+ sector);
+	}
 	public void loadSectores() {
 		sectores = secdao.listadoSectores();
 		
 	}
+	
 	public String loadDatosEditar(int id) {
-		System.out.println("Cargando datos de personas a editar" + id);
+		System.out.println("Cargando datos de sectores a editar" + id);
 		sector = secdao.leer(id);
 		return "crear-sector";
 	}

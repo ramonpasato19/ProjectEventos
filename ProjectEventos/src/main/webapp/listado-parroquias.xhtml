@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Listado parroquias</h1>
+	
+	<h:form>
+		<h:outputText value="No existe registros guardados" 
+		rendered="#{empty parroquiaControlador.parroquias}">
+		</h:outputText>
+		
+		 <h:dataTable value="#{parroquiaControlador.parroquias}" var="parroquia" rendered="#{not empty parroquiaControlador.parroquias}"  >
+
+		 	<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{parroquia.codigo}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{parroquia.nombre}
+				</h:column>
+				
+<!-- 				<h:column> -->
+<!-- 					<f:facet name="header">CodigoPostal</f:facet> -->
+<!-- 					#{parroqui.direccion} -->
+<!-- 				</h:column> -->
+				
+				<h:column>
+					<f:facet name="header">Acciones</f:facet>
+				
+					<h:commandButton action="#{parroquiaControlador.loadDatosEditar(parroquia.codigo)}" value="Editar" />
+					<h:commandButton action="#{parroquiaControlador.borrar(parroquia.codigo)}" value="Borrar" />
+				</h:column>
+		 </h:dataTable>
+		 
+		 	<h:commandButton action="crear-parroquia" value="Crear Nueva Parroquia" />
+	
+	</h:form>
+
+</body> 
+</html>

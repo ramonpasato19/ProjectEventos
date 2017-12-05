@@ -31,13 +31,15 @@ public class Asistente {
 	@Size(max=10)
 	private int telefono;
 	
+	
+	
 	@NotNull
 	@Email
 	@Column(name="asi_email")
 	private String email;
 	
 	@NotNull
-	@Column(name="asi_nombre")
+	@Column(name="asi_direccion")
 	@Size(min=4,max=25)
 	private String direccion;
 	

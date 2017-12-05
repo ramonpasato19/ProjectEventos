@@ -44,7 +44,7 @@ public class CantonDAO {
 		
 	}
 	
-	public void borarr(int id) {
+	public void borrar(int id) {
 		
 		Canton can = leer(id);
 		

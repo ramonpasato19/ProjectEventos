@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Crear Parroquia</h1>
+<h:form>
+<h:panelGrid columns="3">
+
+	<h:outputLabel value="Id" for="codigo"/>
+	<h:inputText id="codigo" value="#{parroquiaControlador.parroquia.codigo}"/>
+	<h:message for="codigo"/>
+	
+	<h:outputLabel value="Nombre" for="nombre"/>
+	<h:inputText id="nombre" value="#{parroquiaControlador.parroquia.nombre}"/>
+	<h:message for="nombre"/>
+	
+	<h:outputLabel value="CodigoPosta" for="codpostal"/>
+	
+	<h:inputText id="codpostal" value="#{parroquiaControlador.parroquia.codigopostal}"/>
+	<h:message for="codpostal"/>
+	
+	
+</h:panelGrid>
+	
+
+	<h:commandButton action="#{parroquiaControlador.guardar()}" value="Guardar" />
+</h:form>
+
+</body> 
+</html>
+

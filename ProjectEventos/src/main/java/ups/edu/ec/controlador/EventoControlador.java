@@ -3,6 +3,7 @@ package ups.edu.ec.controlador;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.EventoDAO;
@@ -10,6 +11,7 @@ import ups.edu.ec.modelo.Evento;
 
 
 @ManagedBean
+@SessionScoped
 public class EventoControlador {
         @Inject
 	private EventoDAO evedao;
@@ -36,10 +38,18 @@ public class EventoControlador {
 		this.evento = evento;
 	}
 	public List<Evento> getEventos() {
+		if(eventos==null)
+			loadEventos();
 		return eventos;
 	}
 	public void setEventos(List<Evento> eventos) {
 		this.eventos = eventos;
+	}
+	
+	public void leerEvento(int codigo) {
+		evento=evedao.leer(codigo);
+		System.out.println("cargando datos de evento"+ evento);
+		
 	}
 	
 	public void loadEventos() {
@@ -48,7 +58,7 @@ public class EventoControlador {
 	}
 	
 	public String loadDatosEditar(int id){
-		System.out.println("Cargando datos de personas a editar" + id);
+		System.out.println("Cargando datos de evento a editar" + id);
 		evento = evedao.leer(id);
 		return "crear-evento";
 	}

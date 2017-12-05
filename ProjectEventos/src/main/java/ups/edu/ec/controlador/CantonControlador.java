@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.CantonDAO;
 import ups.edu.ec.modelo.Canton;
 
 @ManagedBean
+@SessionScoped
 public class CantonControlador {
 
 	@Inject
@@ -36,18 +38,24 @@ public class CantonControlador {
 		this.canton = canton;
 	}
 	public List<Canton> getCantones() {
+		if(cantones==null)
+			loadCantones();
 		return cantones;
 	}
 	public void setCantones(List<Canton> cantones) {
 		this.cantones = cantones;
 	}
-	
+	public void leerCanton(int codigo) {
+		canton=candao.leer(codigo);
+		System.out.println("cargando datos de canton"+ canton);
+		
+	}
 	public void loadCantones() {
 		cantones = candao.listadoCantones();
 	}
 	
 	public String loadDatosEditar(int id) {
-		System.out.println("Cargando datos de personas a editar" + id);
+		System.out.println("Cargando datos de caton a editar" + id);
 		canton = candao.leer(id);
 		return "crear-canton";
 	}
@@ -60,7 +68,7 @@ public class CantonControlador {
 	}
 	
 	public String borrar(int id) {
-		candao.borarr(id);
+		candao.borrar(id);
 		loadCantones();
 		return "listado-cantones";
 	}

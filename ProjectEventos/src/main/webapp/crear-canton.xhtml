@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+
+<h1>Crear Canton</h1>
+
+<h:form>
+<h:panelGrid columns="3">
+
+	<h:outputLabel value="Id" for="codigo"/>
+	<h:inputText id="codigo" value="#{cantonControlador.canton.codigo}"/>
+	<h:message for="codigo"/>
+	
+	<h:outputLabel value="Nombre" for="nombre"/>
+	<h:inputText id="nombre" value="#{cantonControlador.canton.nombre}"/>
+	<h:message for="nombre"/>
+	
+	
+	
+	
+</h:panelGrid>
+
+	<h:commandButton action="#{cantonControlador.guardar()}" value="Guardar" />
+</h:form>
+
+</body> 
+</html>

@@ -41,7 +41,7 @@ public class SectorDAO {
 		return sec;
 	}
 	
-	public void borrar (int id) {
+	public void borrar(int id) {
 		
 		Sector sec = leer(id);
 		

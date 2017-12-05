@@ -8,8 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import ups.edu.ec.modelo.Concurso;
-import ups.edu.ec.modelo.Evento;
-
 
 @Stateless
 public class ConcursoDAO {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.ConcursoDAO;
@@ -12,6 +13,7 @@ import ups.edu.ec.modelo.Concurso;
 
 
 @ManagedBean
+@SessionScoped
 public class ConcursoControlador {
 
 	@Inject
@@ -49,6 +51,8 @@ public class ConcursoControlador {
 
 
 	public List<Concurso> getConcursos() {
+		if(concursos==null)
+			loadConcursos();
 		return concursos;
 	}
 
@@ -57,6 +61,11 @@ public class ConcursoControlador {
 		this.concursos = concursos;
 	}
 	
+	public void leerConcurso(int codigo) {
+		concurso=condao.leer(codigo);
+		System.out.println("cargando datos de concurso"+ concurso);
+		
+	}
 	
 	public void loadConcursos() {
 		concursos =  condao.listadoConcursos();
@@ -64,7 +73,7 @@ public class ConcursoControlador {
 	
 	
 	public String loadDatosEditar(int id){
-		System.out.println("Cargando datos de personas a editar" + id);
+		System.out.println("Cargando datos de concurso a editar" + id);
 		concurso = condao.leer(id);
 		return "crear-concurso";
 	}

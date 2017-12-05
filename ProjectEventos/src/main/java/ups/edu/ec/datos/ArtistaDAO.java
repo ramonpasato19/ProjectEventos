@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import ec.edu.ups.appdis.crudpersona.modelo.Persona;
 import ups.edu.ec.modelo.Artista;
 
 @Stateless

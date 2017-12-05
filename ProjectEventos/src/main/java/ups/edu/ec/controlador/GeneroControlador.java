@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.GeneroDAO;
@@ -12,6 +13,7 @@ import ups.edu.ec.modelo.Genero;
 
 
 @ManagedBean
+@SessionScoped
 public class GeneroControlador {
 
 	
@@ -43,6 +45,8 @@ public class GeneroControlador {
 	}
 
 	public List<Genero> getGeneros() {
+		if(generos==null)
+			loadGeneros();
 		return generos;
 	}
 
@@ -50,6 +54,11 @@ public class GeneroControlador {
 		this.generos = generos;
 	}
 	
+	public void leerGenero(int codigo) {
+		genero=gendao.leer(codigo);
+		System.out.println("cargando datos de genero"+ genero);
+		
+	}
 	
 	public void loadGeneros() {
 

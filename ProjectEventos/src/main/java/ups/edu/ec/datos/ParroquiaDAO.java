@@ -43,7 +43,7 @@ public class ParroquiaDAO {
 	}
 
 	
-	public void eliminar(int id) {
+	public void borrar(int id) {
 		Parroquia par = leer(id);
 	
 		em.remove(par);
