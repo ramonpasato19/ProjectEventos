@@ -2,41 +2,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
-<body> 
+<h:head>
+<title>Evento - Agregar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<h1>Crear Sector</h1>
+    <link href="#" th:href="@{resources/static/css/style.css}" rel="stylesheet" />
+
+</h:head> 
+<body> 
+<div class="jumbotron">
+		<div class="container">
+			<h1>Crear Evento</h1>
+			<br/>
+
 <h:form>
-		<h:panelGrid columns="12">
+		<h:panelGrid columns="4">
 		
 			<h:outputLabel value="Id" for="codigo"/>
-			<h:inputText id="codigo" value="#{eventoControlador.evento.codigo}"/>
+			<h:inputText id="codigo" value="#{eventoControlador.evento.codigo}" class="form-control"/>
 			<h:message for="codigo"/>
 			<br />
 			<br />
 			<h:outputLabel value="Fecha" for="fecha"/>
-			<h:inputText id="fecha" value="#{eventoControlador.evento.fecha}">
+			<h:inputText id="fecha" value="#{eventoControlador.evento.fecha}" class="form-control">
 			<f:convertDateTime pattern="yyyy/MM/dd" />
 			</h:inputText>
 			<h:message for="fecha"/>
 			<br />
 			<br />
 			<h:outputLabel value="Descripcion" for="descripcion"/>
-			<h:inputText id="descripcion" value="#{eventoControlador.evento.descripcion}"/>
+			<h:inputText id="descripcion"  value="#{eventoControlador.evento.descripcion}" class="form-control"/>
 			<h:message for="descripcion"/>
 			<br />
 			<br />
 			<h:outputLabel value="Representante" for="representante"/>
-			<h:inputText id="representante" value="#{eventoControlador.evento.representante}"/>
+			<h:inputText id="representante" value="#{eventoControlador.evento.representante}" class="form-control"/>
 			<h:message for="representante"/>
 			
 			<br />
 		</h:panelGrid>
 			
-			<h:commandButton action="#{eventoControlador.guardar()}" value="Guardar" />
+			<h:commandButton action="#{eventoControlador.guardar()}" value="Guardar" class="btn btn- btn-primary" />
 		</h:form>
-
+</div>
+</div>
 </body> 
 </html>

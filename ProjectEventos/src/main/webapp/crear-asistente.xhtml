@@ -2,52 +2,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
+<h:head>
+<title>Asistente - Agregar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="#" th:href="@{resources/static/css/style.css}" rel="stylesheet" />
+
+</h:head> 
 <body> 
-<h1>Crear Sector</h1>
+<div class="jumbotron">
+		<div class="container">
+			<h1>Crear Asistente</h1>
+			<br/>
 
 <h:form>
 <h:panelGrid columns="3">
 
 	<h:outputLabel value="Id" for="codigo"/>
-	<h:inputText id="codigo" value="#{asistenteControlador.asistente.codigo}"/>
+	<h:inputText id="codigo" value="#{asistenteControlador.asistente.codigo}" class="form-control" />
 	<h:message for="codigo"/>
 	
 	<h:outputLabel value="Nombre" for="nombre"/>
-	<h:inputText id="nombre" value="#{asistenteControlador.asistente.nombre}"/>
+	<h:inputText id="nombre" value="#{asistenteControlador.asistente.nombre}" class="form-control"/>
 	<h:message for="nombre"/>
 	
 	<h:outputLabel value="Cedula" for="cedula"/>
-	<h:inputText id="cedula" value="#{asistenteControlador.asistente.cedula}"/>
+	<h:inputText id="cedula" value="#{asistenteControlador.asistente.cedula}" class="form-control"/>
 	<h:message for="cedula"/>
 	
 	<h:outputLabel value="Telefono" for="telefono"/>
-	<h:inputText id="telefono" value="#{asistenteControlador.asistente.telefono}"/>
+	<h:inputText id="telefono" value="#{asistenteControlador.asistente.telefono}" class="form-control"/>
 	<h:message for="telefono"/>
 	
 	<h:outputLabel value="Email" for="email"/>
-	<h:inputText id="email" value="#{asistenteControlador.asistente.email}"/>
+	<h:inputText id="email" value="#{asistenteControlador.asistente.email}" class="form-control"/>
 	<h:message for="email"/>
 	
 	<h:outputLabel value="Direccion" for="direccion"/>
-	<h:inputText id="direccion" value="#{asistenteControlador.asistente.direccion}"/>
+	<h:inputText id="direccion" value="#{asistenteControlador.asistente.direccion}" class="form-control"/>
 	<h:message for="direccion"/>
 	
 	<h:outputLabel value="Usuario" for="usuario"/>
-	<h:inputText id="usuario" value="#{asistenteControlador.asistente.usuario}"/>
+	<h:inputText id="usuario" value="#{asistenteControlador.asistente.usuario}" class="form-control"/>
 	<h:message for="usuario"/>
 	
 	<h:outputLabel value="Password" for="password"/>
-	<h:inputText id="password" value="#{asistenteControlador.asistente.password}"/>
+	<h:inputText id="password" value="#{asistenteControlador.asistente.password}" class="form-control"/>
 	<h:message for="password"/>
 	
-	
+	<br/>
 </h:panelGrid>
 	
-	<h:commandButton action="#{asistenteControlador.guardar()}" value="Guardar" />
+	<h:commandButton action="#{asistenteControlador.guardar()}" value="Guardar" class="btn btn- btn-primary"/>
 </h:form>
-
+</div>
+</div>
 </body> 
 </html>

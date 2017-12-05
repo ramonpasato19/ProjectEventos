@@ -1,35 +1,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
+<h:head>
+<title>Artista - Agregar/modify Contact</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="#" th:href="@{resources/static/css/style.css}" rel="stylesheet" />
+
+</h:head> 
 <body> 
 
-
-<h1>Crear Sector</h1>
+<div class="jumbotron">
+		<div class="container">
+			<h1>Crear Artista</h1>
+			<br/>
 
 <h:form>
 <h:panelGrid columns="3">
 
-	<h:outputLabel value="Id" for="codigo"/>
+	<h:outputLabel value="Id" for="codigo" />
 	
-	<h:inputText id="codigo" value="#{artistaControlador.artista.codigo}"/>
+	<h:inputText id="codigo"  type="text" svalue="#{artistaControlador.artista.codigo}" class="form-control"/>
+	
 	<h:message for="codigo"/>
 	
 	<h:outputLabel value="Nombre" for="nombre"/>
-	<h:inputText id="nombre" value="#{artistaControlador.artista.nombre}"/>
+	<h:inputText id="nombre" value="#{artistaControlador.artista.nombre}" class="form-control"/>
+	<br/>
 	<h:message for="nombre"/>
 	
 	
 	
 </h:panelGrid>
-	
-	<h:commandButton action="#{artistaControlador.guardar()}" value="Guardar" />
-
+<br/>
+	<h:panelGrid >
+	<h:commandButton action="#{artistaControlador.guardar()}" value="Guardar" class="btn btn- btn-primary center-block"    />
+</h:panelGrid>
 </h:form>
-
+</div>
+</div>
 </body> 
 </html>
 

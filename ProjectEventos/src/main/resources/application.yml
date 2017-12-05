@@ -1,0 +1,22 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+      
+spring:
+  thymeleaf:
+    cache: false # Ingnorar el cache para las plantillas thymeleaf
+    
+  datasource:  # Config conexion a una BD
+    url: jdbc:mysql://127.0.0.1:33060/mydb?useSSL=true
+    username: homestead
+    password: secret
+    
+  jpa:
+    show-sql: true            # Muestra SQL en pantalla
+    hibernate:
+      ddl-auto: update        # Comprueba si las Entities corresponden con las tablas, sino las genera en la BD
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy  # Dialecto al realizar consultas
+    properties:
+      dialect: org.hibernate.dialect.MySQL5Dialect          # Dialecto al realizar consultas
