@@ -7,28 +7,30 @@
 <h:head></h:head> 
 <body> 
 
-<h1>Crear Parroquia</h1>
+<h1>Crear Concurso</h1>
+
 <h:form>
 <h:panelGrid columns="3">
 
 	<h:outputLabel value="Id" for="codigo"/>
-	<h:inputText id="codigo" value="#{parroquiaControlador.parroquia.codigo}"/>
+	
+	<h:inputText id="codigo" value="#{concursoControlador.concurso.codigo}"/>
 	<h:message for="codigo"/>
 	
 	<h:outputLabel value="Nombre" for="nombre"/>
-	<h:inputText id="nombre" value="#{parroquiaControlador.parroquia.nombre}"/>
+	<h:inputText id="nombre" value="#{concursoControlador.concurso.nombre}"/>
 	<h:message for="nombre"/>
 	
-	<h:outputLabel value="CodigoPostaL" for="codigopostal"/>
+	<h:outputLabel value="Descripcion" for="descripcion"/>
 	
-	<h:inputText id="codigopostal" value="#{parroquiaControlador.parroquia.codigopostal}"/>
-	<h:message for="codigopostal"/>
+	<h:inputText id="descripcion" value="#{concursoControlador.concurso.descripcion}"/>
+	<h:message for="descripcion"/>
 	
 	
 </h:panelGrid>
 	
-
-	<h:commandButton action="#{parroquiaControlador.guardar()}" value="Guardar" />
+	<h:commandButton action="#{concursoControlador.guardar()}" value="Guardar" />
+	
 </h:form>
 
 </body> 

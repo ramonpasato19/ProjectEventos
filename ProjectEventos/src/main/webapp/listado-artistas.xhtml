@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+
+<h1>Listado artista</h1>
+	
+	<h:form>
+		<h:outputText value="No existe registros guardados" 
+		rendered="#{empty artistaControlador.artistas}">
+		</h:outputText>
+		 
+		 <h:dataTable value="#{artistaControlador.artistas}" var="artista" rendered="#{not empty artistaControlador.artistas}">
+
+		 	<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{artista.codigo}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{artista.nombre}
+				</h:column>
+				
+				
+				
+				<h:column>
+					<f:facet name="header">Acciones</f:facet>
+					<h:commandButton action="#{artistaControlador.loadDatosEditar(artista.codigo)}" value="Editar" />
+					<h:commandButton action="#{artistaControlador.borrar(artista.codigo)}" value="Borrar" />
+				</h:column>
+		 </h:dataTable>
+		 
+		 	<h:commandButton action="crear-artista" value="Crear Nuevo artista" />
+	
+	</h:form>
+
+</body> 
+</html>

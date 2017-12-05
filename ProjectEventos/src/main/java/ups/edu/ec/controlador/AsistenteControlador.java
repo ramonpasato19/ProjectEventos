@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 
 import ups.edu.ec.datos.AsistenteDAO;
 import ups.edu.ec.modelo.Asistente;
@@ -15,6 +16,7 @@ import ups.edu.ec.modelo.Asistente;
 @SessionScoped
 public class AsistenteControlador {
 	
+	@Inject
 	private AsistenteDAO asidao;
 	private Asistente asistente;
 	private List<Asistente> asistentes;

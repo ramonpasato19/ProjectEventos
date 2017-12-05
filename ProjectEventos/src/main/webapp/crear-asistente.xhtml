@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+<h1>Crear Sector</h1>
+
+<h:form>
+<h:panelGrid columns="3">
+
+	<h:outputLabel value="Id" for="codigo"/>
+	<h:inputText id="codigo" value="#{asistenteControlador.asistente.codigo}"/>
+	<h:message for="codigo"/>
+	
+	<h:outputLabel value="Nombre" for="nombre"/>
+	<h:inputText id="nombre" value="#{asistenteControlador.asistente.nombre}"/>
+	<h:message for="nombre"/>
+	
+	<h:outputLabel value="Cedula" for="cedula"/>
+	<h:inputText id="cedula" value="#{asistenteControlador.asistente.cedula}"/>
+	<h:message for="cedula"/>
+	
+	<h:outputLabel value="Telefono" for="telefono"/>
+	<h:inputText id="telefono" value="#{asistenteControlador.asistente.telefono}"/>
+	<h:message for="telefono"/>
+	
+	<h:outputLabel value="Email" for="email"/>
+	<h:inputText id="email" value="#{asistenteControlador.asistente.email}"/>
+	<h:message for="email"/>
+	
+	<h:outputLabel value="Direccion" for="direccion"/>
+	<h:inputText id="direccion" value="#{asistenteControlador.asistente.direccion}"/>
+	<h:message for="direccion"/>
+	
+	<h:outputLabel value="Usuario" for="usuario"/>
+	<h:inputText id="usuario" value="#{asistenteControlador.asistente.usuario}"/>
+	<h:message for="usuario"/>
+	
+	<h:outputLabel value="Password" for="password"/>
+	<h:inputText id="password" value="#{asistenteControlador.asistente.password}"/>
+	<h:message for="password"/>
+	
+	
+</h:panelGrid>
+	
+	<h:commandButton action="#{asistenteControlador.guardar()}" value="Guardar" />
+</h:form>
+
+</body> 
+</html>

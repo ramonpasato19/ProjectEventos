@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Crear Sector</h1>
+<h:form>
+		<h:panelGrid columns="12">
+		
+			<h:outputLabel value="Id" for="codigo"/>
+			<h:inputText id="codigo" value="#{eventoControlador.evento.codigo}"/>
+			<h:message for="codigo"/>
+			<br />
+			<br />
+			<h:outputLabel value="Fecha" for="fecha"/>
+			<h:inputText id="fecha" value="#{eventoControlador.evento.fecha}">
+			<f:convertDateTime pattern="yyyy/MM/dd" />
+			</h:inputText>
+			<h:message for="fecha"/>
+			<br />
+			<br />
+			<h:outputLabel value="Descripcion" for="descripcion"/>
+			<h:inputText id="descripcion" value="#{eventoControlador.evento.descripcion}"/>
+			<h:message for="descripcion"/>
+			<br />
+			<br />
+			<h:outputLabel value="Representante" for="representante"/>
+			<h:inputText id="representante" value="#{eventoControlador.evento.representante}"/>
+			<h:message for="representante"/>
+			
+			<br />
+		</h:panelGrid>
+			
+			<h:commandButton action="#{eventoControlador.guardar()}" value="Guardar" />
+		</h:form>
+
+</body> 
+</html>

@@ -28,7 +28,7 @@ public class Asistente {
 	
 	@NotNull
 	@Column(name="asi_telefono", length=10)
-	@Size(max=10)
+	//@Size(max=10)
 	private int telefono;
 	
 	

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h1>Listado Asistentes</h1>
+	
+	<h:form>
+		<h:outputText value="No existe registros guardados" 
+		rendered="#{empty asistenteControlador.asistentes}">
+		</h:outputText>
+		 
+		 <h:dataTable value="#{asistenteControlador.asistentes}" var="asistente" rendered="#{not empty asistenteControlador.asistentes}">
+
+		 	<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{asistente.codigo}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{asistente.nombre}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Cedula</f:facet>
+					#{asistente.cedula}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Telefono</f:facet>
+					#{asistente.telefono}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Email</f:facet>
+					#{asistente.email}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Direccion</f:facet>
+					#{asistente.direccion}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Usuario</f:facet>
+					#{asistente.usuario}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Password</f:facet>
+					#{asistente.password}
+				</h:column>
+				
+				
+				
+				<h:column>
+					<f:facet name="header">Acciones</f:facet>
+					<h:commandButton action="#{asistenteControlador.loadDatosEditar(asistente.codigo)}" value="Editar" />
+					
+					<h:commandButton action="#{asistenteControlador.borrar(asistente.codigo)}" value="Borrar" />
+				</h:column>
+		 </h:dataTable>
+		 
+		 	<h:commandButton action="crear-asistente" value="Crear Nuevo Asistente" />
+	
+	</h:form>
+	
+
+</body> 
+</html>

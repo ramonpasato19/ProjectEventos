@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h1>Listado Generos</h1>
+	
+	<h:form>
+		<h:outputText value="No existe registros guardados" 
+		rendered="#{empty generoControlador.generos}">
+		</h:outputText>
+		 
+		 <h:dataTable value="#{generoControlador.generos}" var="genero" rendered="#{not empty generoControlador.generos}">
+
+		 	<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{genero.codigo}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{genero.nombre}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Acciones</f:facet>
+					<h:commandButton action="#{generoControlador.loadDatosEditar(genero.codigo)}" value="Editar" />
+					<h:commandButton action="#{generoControlador.borrar(genero.codigo)}" value="Borrar" />
+				</h:column>
+		 </h:dataTable>
+		 
+		 	<h:commandButton action="crear-genero" value="Crear Nuevo Genero" />
+	
+	</h:form>
+
+</body> 
+</html>
+

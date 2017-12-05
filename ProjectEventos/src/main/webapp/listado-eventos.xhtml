@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h1>Listado Eventos</h1>
+	
+	<h:form>
+		<h:outputText value="No existe registros guardados" 
+		rendered="#{empty eventoControlador.eventos}">
+		</h:outputText>
+		 
+		 <h:dataTable value="#{eventoControlador.eventos}" var="evento" rendered="#{not empty eventoControlador.eventos}">
+
+		 	<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{evento.codigo}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Fecha</f:facet>
+					#{evento.fecha}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Descripcion</f:facet>
+					#{evento.descripcion}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Representante</f:facet>
+					#{evento.representante}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Acciones</f:facet>
+					<h:commandButton action="#{eventoControlador.loadDatosEditar(evento.codigo)}" value="Editar" />
+					<h:commandButton action="#{eventoControlador.borrar(evento.codigo)}" value="Borrar" />
+					
+				</h:column>
+		 </h:dataTable>
+		 
+		 	<h:commandButton action="crear-evento" value="Crear Nuevo Evento" />
+	
+	</h:form>
+	
+	
+
+</body> 
+</html>

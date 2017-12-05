@@ -12,7 +12,6 @@ public class Parroquia {
 	
 	
 	@Id
-	@GeneratedValue
 	private int codigo;
 	
 	@NotNull
@@ -22,7 +21,7 @@ public class Parroquia {
 	
 	@NotNull
 	@Column(name="par_codpost")
-	@Size(min=2, max=6 )
+	//@Size(max=6 )
 	private int codigopostal;
 
 	public int getCodigo() {
