@@ -1,5 +1,7 @@
 package ups.edu.ec.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,8 +10,14 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-public class Gastronomia {
+public class Gastronomia implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	@Id
 	private int codigo;
 	

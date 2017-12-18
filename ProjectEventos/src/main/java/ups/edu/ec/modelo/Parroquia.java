@@ -16,9 +16,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Parroquia{
+public class Parroquia implements Serializable{
 	
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="par_codigo",length=10)
