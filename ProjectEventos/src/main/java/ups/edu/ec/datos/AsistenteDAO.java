@@ -55,6 +55,13 @@ public class AsistenteDAO {
 		List<Asistente> listado=query.getResultList();
 		return listado;
 	}
+	
+	public List<Asistente> listadocorreo(){
+		Query query = em.createQuery("SELECT asi.asi_email FROM Asistente asi", Asistente.class);
+		List<Asistente> listado1=query.getResultList();
+		return listado1;
+	}
+	
 
 
 

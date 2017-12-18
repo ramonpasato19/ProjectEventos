@@ -20,6 +20,7 @@ public class AsistenteControlador {
 	private AsistenteDAO asidao;
 	private Asistente asistente;
 	private List<Asistente> asistentes;
+	private List<Asistente> correos;
 	
 	
 	@PostConstruct

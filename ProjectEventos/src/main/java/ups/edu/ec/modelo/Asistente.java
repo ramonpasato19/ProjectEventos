@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -20,6 +21,7 @@ public class Asistente implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column(name="asi_id", nullable=false, unique=true)
 	private int codigo;
 	
 	@NotNull
