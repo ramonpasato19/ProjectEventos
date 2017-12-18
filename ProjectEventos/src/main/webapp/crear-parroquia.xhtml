@@ -45,23 +45,6 @@
 	<br/>
 </h:panelGrid>
 	
-	<h:dataTable value="#{parroquiaControlador.parroquia.sectores}" var="sector">
-		<h:column >
-		<f:facet name="header">Codigo</f:facet>
-		<h:inputText value="#{sector.codigo}"/>
-		</h:column>
-		
-		<h:column >
-		<f:facet name="header">Nombre</f:facet>
-		<h:inputText value="#{sector.nombre}"/>
-		</h:column>
-		
-		<h:column >
-		<f:facet name="header">Direccion</f:facet>
-		<h:inputText value="#{sector.direccion}"/>
-		</h:column>
-	
-	</h:dataTable>
 
 	<h:commandButton action="#{parroquiaControlador.guardar()}" value="Guardar" class="btn btn- btn-primary" />
 </h:form>
