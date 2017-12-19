@@ -5,6 +5,9 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import ups.edu.ec.modelo.Asistente;
@@ -14,6 +17,10 @@ public class AsistenteDAO {
 	
 	@Inject
 	private EntityManager em;
+	
+	
+	//private EntityManagerFactory factory = Persistence .createEntityManagerFactory("users"); 
+	//private EntityManager em = factory.createEntityManager(); 
 	
 	public void guardar(Asistente asi) {
 		Asistente aux = leer(asi.getCodigo());
@@ -56,11 +63,25 @@ public class AsistenteDAO {
 		return listado;
 	}
 	
-	public List<Asistente> listadocorreo(){
-		Query query = em.createQuery("SELECT asi.asi_email FROM Asistente asi", Asistente.class);
-		List<Asistente> listado1=query.getResultList();
-		return listado1;
-	}
+	
+	public Asistente getUser(String usuario, String password) 
+	{ 
+		try { 
+			Asistente user = (Asistente) em
+					//.createQuery( "SELECT asi from asistente asi where asi_email = :name and asi_password = :password") 
+					.createQuery( "SELECT asi_email email, asi_password pass from asistente asi ") 
+					.setParameter("email", usuario) 
+					.setParameter("pass", password).getSingleResult(); 
+			return user; } 
+		catch (NoResultException e) 
+		{ 
+			return null; 
+			}
+		}
+		
+	
+
+	
 	
 
 

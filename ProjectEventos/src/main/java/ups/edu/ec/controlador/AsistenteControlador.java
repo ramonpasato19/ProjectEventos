@@ -5,8 +5,10 @@ package ups.edu.ec.controlador;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.AsistenteDAO;
@@ -20,7 +22,7 @@ public class AsistenteControlador {
 	private AsistenteDAO asidao;
 	private Asistente asistente;
 	private List<Asistente> asistentes;
-	private List<Asistente> correos;
+	
 	
 	
 	@PostConstruct
@@ -82,4 +84,9 @@ public class AsistenteControlador {
 		loadAsistentes();
 		return "listado-asistentes";
 	}
+	
+	
+	
+			
+	
 }

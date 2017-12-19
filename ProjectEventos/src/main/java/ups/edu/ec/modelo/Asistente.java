@@ -54,14 +54,14 @@ public class Asistente implements Serializable{
 	
 	
 	@NotNull
-	@Column(name="asi_usuario")
+	@Column(name="asi_usuario",nullable=false, unique=true)
 	@Size(min=6,max=15)
 	private String usuario;
 	
 	
 	
 	@NotNull
-	@Column(name="asi_password")
+	@Column(name="asi_password",nullable=false, unique=false)
 	@Size(min=6,max=15)
 	private String password;
 
