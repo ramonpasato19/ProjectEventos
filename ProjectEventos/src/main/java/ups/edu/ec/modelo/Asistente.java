@@ -65,7 +65,8 @@ public class Asistente implements Serializable{
 	@Size(min=6,max=15)
 	private String password;
 
-
+	@Column(name = "use_rol",length = 20)
+	private int rol;
 
 	public int getCodigo() {
 		return codigo;
@@ -163,12 +164,28 @@ public class Asistente implements Serializable{
 
 
 
+	public int getRol() {
+		return rol;
+	}
+
+
+
+	public void setRol(int rol) {
+		this.rol = rol;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Asistente [codigo=" + codigo + ", nombre=" + nombre + ", cedula=" + cedula + ", telefono=" + telefono
 				+ ", email=" + email + ", direccion=" + direccion + ", usuario=" + usuario + ", password=" + password
-				+ "]";
+				+ ", rol=" + rol + "]";
 	}
+
+
+
+
 	
 	
 	

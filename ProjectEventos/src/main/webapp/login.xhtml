@@ -40,13 +40,13 @@
   <div class="login-box-body">
     <p class="login-box-msg">Loeguearse para iniciar Session</p>
 
-    <form action="#{}" method="post">
+    <form action="#{loginControlador.login()}" method="post">
       <div class="form-group has-feedback">
-      	 <input type="email" placeholder="Email" class="form-control" value="#{}" />
+      	 <input type="email" placeholder="Email" class="form-control" value="#{loginControlador.correoIngresado}" />
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" value="#{}"/>
+        <input type="password" class="form-control" placeholder="Password" value="#{loginControlador.claveIngresado}"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
