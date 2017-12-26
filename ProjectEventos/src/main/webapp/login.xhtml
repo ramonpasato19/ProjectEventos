@@ -40,13 +40,13 @@
   <div class="login-box-body">
     <p class="login-box-msg">Loeguearse para iniciar Session</p>
 
-    <form action="#{loginManagedBean.send()}" method="post">
+    <form action="#{}" method="post">
       <div class="form-group has-feedback">
-      	 <input type="email" placeholder="Email" class="form-control" value="#{loginManagedBean.user.email}" />
+      	 <input type="email" placeholder="Email" class="form-control" value="#{}" />
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" value="#{loginManagedBean.user.password}"/>
+        <input type="password" class="form-control" placeholder="Password" value="#{}"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

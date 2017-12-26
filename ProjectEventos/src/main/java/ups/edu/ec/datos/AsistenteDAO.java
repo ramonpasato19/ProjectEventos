@@ -63,27 +63,6 @@ public class AsistenteDAO {
 		return listado;
 	}
 	
-	
-	public Asistente getUser(String usuario, String password) 
-	{ 
-		try { 
-			Asistente user = (Asistente) em
-					//.createQuery( "SELECT asi from asistente asi where asi_email = :name and asi_password = :password") 
-					.createQuery( "SELECT asi_email email, asi_password pass from asistente asi ") 
-					.setParameter("email", usuario) 
-					.setParameter("pass", password).getSingleResult(); 
-			return user; } 
-		catch (NoResultException e) 
-		{ 
-			return null; 
-			}
-		}
-		
-	
-
-	
-	
-
 
 
 }
