@@ -4,17 +4,40 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head></h:head> 
-<body> 
-	<h:form>
-	<h:panelGrid columns="2" columnClasses="titleCell">
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <title>Sign In | GaumbraRaymi</title>
+    <!-- Favicon-->
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
+    <link  href="https://fonts.googleapis.com/css?subset=latin,cyrillic-ext"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
+
+    <!-- Bootstrap Core Css -->
+    <link href="resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+
+    <!-- Waves Effect Css -->
+    <link href="resources/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="resources/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="resources/css/style.css" rel="stylesheet"/>
+
+</h:head> 
+<body class="login-page"> 
+<h:form>
+<!-- 	<h:panelGrid columns="2" columnClasses="titleCell"> -->
 	Correo: <h:inputText value="#{loginControlador.correoIngresado}" />
 	Cotraseña: <h:inputSecret value="#{loginControlador.claveIngresado}" />
-	<h:commandButton value="LOGIN" action="#{loginControlador.listar()}">
-
-	</h:commandButton>
+	<h:commandButton value="LOGIN" action="#{loginControlador.listar()}"></h:commandButton>
 	
-</h:panelGrid>
+<!-- </h:panelGrid> -->
 </h:form>
+
 </body>
 </html>
