@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head>
@@ -29,6 +30,7 @@
     <link href="resources/css/style.css" rel="stylesheet"/>
 
 </h:head> 
+
 <body class="signup-page">
     <div class="signup-box">
         <div class="logo">
@@ -37,51 +39,104 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_up" >
+<!--             inicio del formulario -->
+                <h:form id="sign_up" >
                     <div class="msg">Register a new membership</div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">perm_identity</i>
+                        </span>
+                        <div class="form-line">
+<!--                        <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" /> -->
+                            <h:inputText id="codigo" value="#{asistenteControlador.asistente.codigo}" class="form-control" p:type="text" p:placeholder="Codigo" />
+                        </div>
+                    </div>
+                    
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" />
+                            <h:inputText id="nombre" value="#{asistenteControlador.asistente.nombre}" class="form-control" p:type="text" p:placeholder="Nombre" />
+                        </div>
+                        
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <h:inputText id="cedula" value="#{asistenteControlador.asistente.cedula}" class="form-control" p:type="text" p:placeholder="Cedula" />
                         </div>
                     </div>
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">local_phone</i>
+                        </span>
+                        <div class="form-line">
+	                             <h:inputText id="telefono" value="#{asistenteControlador.asistente.telefono}" class="form-control" p:type="text" p:placeholder="Telefono" />
+                        </div>
+                    </div>
+                    
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address"  />
+	                             <h:inputText id="email" value="#{asistenteControlador.asistente.email}" class="form-control" p:type="text" p:placeholder="Email" />
                         </div>
                     </div>
-                    <div class="input-group">
+                                        <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password"  />
+	                             <h:inputText id="direccion" value="#{asistenteControlador.asistente.direccion}" class="form-control" p:type="text" p:placeholder="Direccion" />
                         </div>
                     </div>
-                    <div class="input-group">
+                                        <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" />
+	                             <h:inputText id="rol" value="#{asistenteControlador.asistente.rol}" class="form-control" p:type="text" p:placeholder="Rol" />
                         </div>
                     </div>
+                     
+                     <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+<!--                             <input type="email" class="form-control" name="email" placeholder="Email Address"  /> -->
+	                             <h:inputText id="usuario" value="#{asistenteControlador.asistente.usuario}" class="form-control" p:type="text" p:placeholder="Usuario" />
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+<!--                             <input type="email" class="form-control" name="email" placeholder="Email Address"  /> -->
+	                             <h:inputText id="password" value="#{asistenteControlador.asistente.password}" class="form-control" p:type="password" p:placeholder="Contraseña" />
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink" />
                         <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
                     </div>
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
-
+<!--                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button> -->
+					<h:commandButton class="btn btn-block btn-lg bg-pink waves-effect" action="#{asistenteControlador.guardar()}" value="Guardar" />
+					
                     <div class="m-t-25 m-b--5 align-center">
                         <a href="sign-in.xhtml">You already have a membership?</a>
                     </div>
-                </form>
+                </h:form>
+<!--                 fin del formulario -->
             </div>
         </div>
     </div>

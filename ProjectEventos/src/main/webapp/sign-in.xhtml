@@ -8,7 +8,7 @@
 <h:head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <title>Sign In | GaumbraRaymi</title>
+    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 
@@ -29,26 +29,25 @@
     <!-- Custom Css -->
     <link href="resources/css/style.css" rel="stylesheet"/>
 </h:head> 
-<h:form>
+
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Guambra<b>Raymi</b></a>
+            <a href="javascript:void(0);">Admin<b>BSB</b></a>
             <small>Admin BootStrap Based - Material Design</small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in">
+                <h:form id="sign_in" >
                     <div class="msg">Sign in to start your session</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
-<!--                         <h:form> -->
                         <div class="form-line">
-<!--                             <input type="text" class="form-control" name="username" placeholder="Username"/> -->
-                            <h:inputText value="#{loginControlador.correoIngresado}" class="form-control" p:type="text" p:placeholder="Correo" />
-                            
+<!--                             <input type="text" class="form-control" name="username" placeholder="Username" /> -->
+                            <h:inputText  value="#{loginControlador.correoIngresado}" class="form-control" p:type="email" p:placeholder="Correo" />
+
                         </div>
                     </div>
                     <div class="input-group">
@@ -56,8 +55,9 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-<!--                             <input type="password" class="form-control" name="password" placeholder="Password"/> -->
-                            <h:inputText value="#{loginControlador.claveIngresado}" class="form-control" p:type="password" p:placeholder="Clave" />
+<!--                             <input type="password" class="form-control" name="password" placeholder="Password" /> -->
+                            <h:inputText  value="#{loginControlador.claveIngresado}" class="form-control" p:type="password" p:placeholder="Contraseña" />
+
                         </div>
                     </div>
                     <div class="row">
@@ -67,21 +67,19 @@
                         </div>
                         <div class="col-xs-4">
 <!--                             <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button> -->
-<!--                             	<h:commandButton class="btn btn-block bg-pink waves-effect" value="LOGIN" action="#{loginControlador.listar()}"></h:commandButton> -->
-                            	<h:commandButton value="LOGIN" action="#{loginControlador.listar()}">
-                            	</h:commandButton>
-                            	
+									<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value="SIGN IN" action="#{loginControlador.listar()}"></h:commandButton>
+
                         </div>
-<!--                     </div> -->
+                    </div>
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
                             <a href="sign-up.xhtml">Register Now!</a>
                         </div>
-<!--                         <div class="col-xs-6 align-right"> -->
+                        <div class="col-xs-6 align-right">
                             <a href="forgot-password.xhtml">Forgot Password?</a>
                         </div>
                     </div>
-                </form>
+                </h:form>
             </div>
         </div>
     </div>
@@ -100,7 +98,8 @@
 
     <!-- Custom Js -->
     <script src="resources/js/admin.js"></script>
-    <script src="resources/js/pages/examples/sign-in.js"></script>
+    <script src="resources/js/pages/examples/sign-up.js"></script>
 </body>
-</h:form>
+
+
 </html>
