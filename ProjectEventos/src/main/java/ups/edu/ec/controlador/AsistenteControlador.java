@@ -73,7 +73,7 @@ public class AsistenteControlador {
 		System.out.println(asistente);
 		asidao.guardar(asistente);
 		loadAsistentes();
-		return "listado-asistentes";
+		return "jquery-datatable";
 		
 	}
 	
@@ -82,7 +82,7 @@ public class AsistenteControlador {
 		
 		asidao.borrar(id);
 		loadAsistentes();
-		return "listado-asistentes";
+		return "jquery-datatable";
 	}
 	
 	
