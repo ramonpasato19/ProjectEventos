@@ -22,7 +22,8 @@ public class CantonControlador {
 	@PostConstruct
 	private void init() {
 		canton = new Canton();
-		loadCantones();
+		canton.addParroquia(new Parroquia());
+		canton.addSector(new Sector());
 
 	}
 	public CantonDAO getCandao() {
@@ -72,5 +73,19 @@ public class CantonControlador {
 		loadCantones();
 		return "listado-cantones";
 	}
+	
+	
+	//---------------------------------------
+	public String addParroquia() {
+			
+			canton.addParroquia(new Parroquia());
+			return null;
+		}
+		
+		public String addSector() {
+			canton.addSector(new Sector());
+			return null;
+		}
+	//---------------------------------------
 	
 }
