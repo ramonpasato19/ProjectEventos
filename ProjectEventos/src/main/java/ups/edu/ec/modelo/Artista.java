@@ -34,49 +34,76 @@ public class Artista implements Serializable{
 	@JoinColumn(name="artista",referencedColumnName="art_codigo")
 	private List<Genero> generos;
 	
+	
 
+	
 	public int getCodigo() {
 		return codigo;
 	}
+
+
+
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
+
+
+
 	public String getNombre() {
 		return nombre;
 	}
+
+
+
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	
-	
+
+
+
 	public List<Genero> getGeneros() {
 		return generos;
 	}
+
+
+
 
 	public void setGeneros(List<Genero> generos) {
 		this.generos = generos;
 	}
 
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
+
 	@Override
 	public String toString() {
-		return "Artista [codigo=" + codigo + ", nombre=" + nombre + "]";
+		return "Artista [codigo=" + codigo + ", nombre=" + nombre + ", generos=" + generos + "]";
 	}
-	
-	
-	
+
+
+
+
+	//-----------------------------------------------
 	public void addGenero(Genero genero) {
 		if (generos==null)
-			generos= new ArrayList<>();
+			generos=new ArrayList<>();
 		generos.add(genero);
 		
 		
 	}
 	
-	
+	//-----------------------------------------------
 	
 	
 
