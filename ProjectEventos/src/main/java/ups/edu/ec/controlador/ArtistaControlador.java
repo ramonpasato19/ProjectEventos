@@ -28,12 +28,15 @@ public class ArtistaControlador {
 	public void init() {
 		artista= new Artista();
 		artista.addGenero(new Genero());
+		
 		//loadArtistas();
 	}
 	
 	
 	
-	
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -41,9 +44,13 @@ public class ArtistaControlador {
 
 
 
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 
 
 
@@ -100,10 +107,12 @@ public class ArtistaControlador {
 		return "listado-artistas";
 	}
 	
+	
 	public String addGenero() {
+	
 		artista.addGenero(new Genero());
-		
 		return null;
 		}
+	
 
 }
