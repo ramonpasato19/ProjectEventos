@@ -22,7 +22,12 @@ public class EventoControlador {
 	@PostConstruct
 	public void init() {
 		evento = new Evento();
-		loadEventos();
+	//------------------------------------------------
+		evento.addConcurso(new Concurso());
+		evento.addCategoria(new Categoria());
+		evento.addGastronomia(new Gastronomia());
+		evento.addAsistente(new Asistente());
+	//------------------------------------------------
 	}
 	
 	public EventoDAO getEvedao() {
@@ -76,5 +81,36 @@ public class EventoControlador {
 		loadEventos();
 		return "listado-eventos";
 	}
+	
+	
+	//--------------------------------------------------------------------------------
+public String addConcurso() {
+		
+		evento.addConcurso(new Concurso());
+		return null;
+	}
+	
+
+	public String addCategoria() {
+		evento.addCategoria(new Categoria());
+		return null;
+	}
+	
+	
+	public String addGastronomia() {
+		evento.addGastronomia(new Gastronomia());
+		return null;
+	}
+	
+	public String addAsistente() {
+		evento.addAsistente(new Asistente());
+		return null;
+		
+	}
+	public String removeConcurso() {
+		evento.removeConcurso(null);
+		return null;
+	}
+	//--------------------------------------------------------------------------------
 	
 }
