@@ -7,7 +7,11 @@ import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.EventoDAO;
+import ups.edu.ec.modelo.Asistente;
+import ups.edu.ec.modelo.Categoria;
+import ups.edu.ec.modelo.Concurso;
 import ups.edu.ec.modelo.Evento;
+import ups.edu.ec.modelo.Gastronomia;
 
 
 @ManagedBean
@@ -22,12 +26,12 @@ public class EventoControlador {
 	@PostConstruct
 	public void init() {
 		evento = new Evento();
-	//------------------------------------------------
+		//------------------------------------------------
 		evento.addConcurso(new Concurso());
 		evento.addCategoria(new Categoria());
 		evento.addGastronomia(new Gastronomia());
 		evento.addAsistente(new Asistente());
-	//------------------------------------------------
+		//------------------------------------------------
 	}
 	
 	public EventoDAO getEvedao() {
@@ -112,5 +116,4 @@ public String addConcurso() {
 		return null;
 	}
 	//--------------------------------------------------------------------------------
-	
 }
