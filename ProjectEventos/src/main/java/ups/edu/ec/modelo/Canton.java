@@ -1,10 +1,16 @@
 package ups.edu.ec.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,6 +24,7 @@ public class Canton implements Serializable{
 
 
 	@Id
+	@Column(name="can_codigo", length=10)
 	private int codigo;
 	
 	
@@ -25,7 +32,6 @@ public class Canton implements Serializable{
 	@Column(name="can_nombre", length=10)
 	@Size(min=6,max=25)
 	private String nombre;
-	
 	//--------------------------------------------------------------
 
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
@@ -38,10 +44,30 @@ public class Canton implements Serializable{
 	
 	//--------------------------------------------------------------
 	
-
-
+	
+	
 	public int getCodigo() {
 		return codigo;
+	}
+
+
+	public List<Parroquia> getParroquias() {
+		return parroquias;
+	}
+
+
+	public void setParroquias(List<Parroquia> parroquias) {
+		this.parroquias = parroquias;
+	}
+
+
+	public List<Sector> getSectores() {
+		return sectores;
+	}
+
+
+	public void setSectores(List<Sector> sectores) {
+		this.sectores = sectores;
 	}
 
 
@@ -60,6 +86,9 @@ public class Canton implements Serializable{
 	}
 
 
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Canton [codigo=" + codigo + ", nombre=" + nombre + ", parroquias=" + parroquias + ", sectores="
@@ -83,6 +112,5 @@ public class Canton implements Serializable{
 	}
 	
 	//--------------------------------------------------------------
-	
 
 }
