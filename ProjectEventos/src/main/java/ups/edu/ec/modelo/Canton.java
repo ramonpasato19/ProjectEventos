@@ -25,6 +25,19 @@ public class Canton implements Serializable{
 	@Column(name="can_nombre", length=10)
 	@Size(min=6,max=25)
 	private String nombre;
+	
+	//--------------------------------------------------------------
+
+	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
+	@JoinColumn(name="canton",referencedColumnName="can_codigo")
+	private List<Parroquia> parroquias;
+	
+	@OneToMany(cascade= {CascadeType.ALL})
+	@JoinColumn(name="sector", referencedColumnName="can_codigo")
+	private List<Sector>sectores;
+	
+	//--------------------------------------------------------------
+	
 
 
 	public int getCodigo() {
@@ -49,10 +62,27 @@ public class Canton implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Canton [codigo=" + codigo + ", nombre=" + nombre + "]";
+		return "Canton [codigo=" + codigo + ", nombre=" + nombre + ", parroquias=" + parroquias + ", sectores="
+				+ sectores + "]";
+	}
+
+
+	//--------------------------------------------------------------
+	public void  addParroquia(Parroquia parroquia) {
+		if (parroquias==null)
+			parroquias=new ArrayList<>();
+		parroquias.add(parroquia);
 	}
 	
+	public void addSector(Sector sector) {
+		if (sectores==null)
+			sectores=new ArrayList<>();
+		sectores.add(sector);
+			
+		
+	}
 	
+	//--------------------------------------------------------------
 	
 
 }
