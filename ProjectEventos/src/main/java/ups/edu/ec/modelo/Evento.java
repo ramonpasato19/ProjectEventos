@@ -39,6 +39,27 @@ public class Evento implements Serializable{
 	@Column(name="eve_representante", length=10)
 	@Size(min=6,max=25)
 	private String representante;
+	
+	
+//---------------------------------------------------------------------------------------
+	@OneToMany(cascade= {CascadeType.ALL}, fetch = FetchType.EAGER)  //relacion entre Evento y Concurso, cascade tipo de comportamiendo en actualizacion borrado , etc....guaqrde el padre y automaticamente los hijos
+	@JoinColumn(name="evento", referencedColumnName="even_codigo") //como relacionan los campos
+	private List<Concurso> concursos;  //el evento tiene una lista de concursos
+	
+	@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+	@JoinColumn(name="evento", referencedColumnName="even_codigo")
+	private List<Categoria> categorias;
+	
+	@OneToMany(cascade= {CascadeType.ALL}, fetch= FetchType.LAZY)
+	@JoinColumn(name="evento", referencedColumnName="even_codigo")
+	private List<Gastronomia> gastronomias;
+	
+	@OneToMany(cascade= {CascadeType.ALL}, fetch=FetchType.LAZY)
+	@JoinColumn(name="evento", referencedColumnName="even_codigo")
+	private List<Asistente> asistentes;
+
+//---------------------------------------------------------------------------------------
+
 
 
 	public int getCodigo() {
@@ -84,10 +105,44 @@ public class Evento implements Serializable{
 	@Override
 	public String toString() {
 		return "Evento [codigo=" + codigo + ", fecha=" + fecha + ", descripcion=" + descripcion + ", representante="
-				+ representante + "]";
+				+ representante + ", concursos=" + concursos + ", categorias=" + categorias + ", gastronomias="
+				+ gastronomias + ", asistentes=" + asistentes + "]";
 	}
 	
 	
+	//----------------------------------------------------------------
+	public void addConcurso(Concurso concurso) {
+		if (concursos==null)
+			concursos= new ArrayList<>();
+		concursos.add(concurso);
+	}
+	
+	public void addCategoria(Categoria categoria) {
+		if(categorias==null)
+			categorias= new ArrayList<>();
+		categorias.add(categoria);
+	}
+	
+	public void addGastronomia(Gastronomia gastronomia) {
+		if (gastronomias==null)
+			gastronomias= new ArrayList<>();
+		gastronomias.add(gastronomia);
+	}
+	
+	public void addAsistente(Asistente asistente) {
+		if (asistentes==null)
+			asistentes=new ArrayList<>();
+		asistentes.add(asistente);
+	}
+	
+	
+	public void removeConcurso(Concurso concurso) {
+		if (concursos==null)
+			concursos= new ArrayList<>();
+		concursos.remove(concurso);
+	}
+	
+	//----------------------------------------------------------------
 	
 
 }
