@@ -5,13 +5,17 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.CantonDAO;
 import ups.edu.ec.modelo.Canton;
+import ups.edu.ec.modelo.Parroquia;
+import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
-@SessionScoped
+//@SessionScoped
+@ViewScoped
 public class CantonControlador {
 
 	@Inject
@@ -22,9 +26,10 @@ public class CantonControlador {
 	@PostConstruct
 	private void init() {
 		canton = new Canton();
+		//---------------------------------------
 		canton.addParroquia(new Parroquia());
 		canton.addSector(new Sector());
-
+		//---------------------------------------
 	}
 	public CantonDAO getCandao() {
 		return candao;
@@ -38,6 +43,8 @@ public class CantonControlador {
 	public void setCanton(Canton canton) {
 		this.canton = canton;
 	}
+	
+	
 	public List<Canton> getCantones() {
 		if(cantones==null)
 			loadCantones();
@@ -46,6 +53,8 @@ public class CantonControlador {
 	public void setCantones(List<Canton> cantones) {
 		this.cantones = cantones;
 	}
+	
+	
 	public void leerCanton(int codigo) {
 		canton=candao.leer(codigo);
 		System.out.println("cargando datos de canton"+ canton);
@@ -74,7 +83,6 @@ public class CantonControlador {
 		return "listado-cantones";
 	}
 	
-	
 	//---------------------------------------
 	public String addParroquia() {
 			
@@ -87,5 +95,4 @@ public class CantonControlador {
 			return null;
 		}
 	//---------------------------------------
-	
 }
