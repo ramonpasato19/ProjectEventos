@@ -821,6 +821,132 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>FORMULARIO</h2>
+		    
+	            
+      <!--  Registr lugar mi parte -->          
+                
+                
+                <h2>Canton-Parroquia-Sector</h2>
+                
+                 
+                 
+
+                 
+                      
+                        
+		<div class="jumbotron">
+		<div class="container">
+<!-- 			<h1>Nuevo relacion Canton-Parroquia-Sector-</h1> -->
+			
+			<h2>NUEVA RELACION CANTON-PARROQUIA-SECTOR</h2>
+			<br/>
+		<h:form>
+		<h:panelGrid columns="3">
+
+					
+					<h2 class="card-inside-title">Codigo Canton</h2>
+					<h:inputText id="codigo" value="#{cantonControlador.canton.codigo}" class="form-control"/>
+					<h:message for="codigo"/>
+					
+					<h2 class="card-inside-title">Nombre</h2>
+					<h:inputText class="form-control" id="nombre" value="#{cantonControlador.canton.nombre}"/>
+					<h:message for="nombre"/>
+					
+				<br/>	
+	
+		</h:panelGrid>
+
+		
+		<h2 class="card-inside-title">Parroquia</h2>
+		
+		<br />
+		<div class="col-xs-2">
+	
+			<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value="Agregar Parroquia" action="#{cantonControlador.addParroquia()}">
+			
+			<f:ajax render="tbl_parroquias" execute="@all"></f:ajax>
+			
+			</h:commandButton>
+				<br />
+        </div>
+        <br />
+	
+		<h:dataTable value="#{cantonControlador.canton.parroquias}" var= "parroquia" id = "tbl_parroquias">
+			<h:column>
+				<h2 class="card-inside-title">Codigo </h2>
+				
+				<h:inputText value="#{parroquia.codigo}" />
+			</h:column>
+			
+			<h:column>
+				<h2 class="card-inside-title">Nombre</h2>
+				
+				<h:inputText value="#{parroquia.nombre}" />
+			</h:column>
+			
+			
+			<h:column>
+				<h2 class="card-inside-title">Codigo CPostal</h2>
+				
+				<h:inputText value="#{parroquia.codigopostal}" />
+			</h:column>
+		
+		</h:dataTable>
+		<br />
+		
+		
+		
+		
+		<h2 class="card-inside-title">CSector</h2>
+		<br/>
+		<div class="col-xs-2">
+
+		<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Agregar Sector" action="#{cantonControlador.addSector()}"></h:commandButton>
+		<br />
+		</div>
+		
+		<h:dataTable value="#{cantonControlador.canton.sectores}" var="sector">
+			<h:column>
+<!-- 				<f:facet name="header">Codigo</f:facet> -->
+				<h2 class="card-inside-title">Codigo Canton</h2>
+				<h:inputText value="#{sector.codigo}" />
+			</h:column>
+			
+			<h:column>
+				<h2 class="card-inside-title">Nombre</h2>
+<!-- 				<f:facet name="header">Nombre</f:facet> -->
+				<h:inputText value="#{sector.nombre}" />
+			</h:column>
+			
+			<h:column>
+				<h2 class="card-inside-title">Direccion</h2>
+<!-- 				<f:facet name="header">Direccion</f:facet> -->
+				<h:inputText value="#{sector.direccion}" />
+			</h:column>
+			</h:dataTable>
+		
+		
+							<br />
+
+	
+							<br/>
+							<br/>
+	
+		<div class="col-xs-2">
+
+			<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value="Guardar" action="#{cantonControlador.guardar()}"></h:commandButton>
+			<br />
+		</div>
+</h:form>
+</div>
+</div>
+
+
+
+<!-- fin de mi parte -->
+    
+		    
+		    
             </div>
         </div>
     </section>
