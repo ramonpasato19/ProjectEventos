@@ -821,6 +821,218 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>FORMULARIO</h2>
+		    
+		    
+		    
+		    
+<!--                 Inicio parte evento-->
+
+
+
+                <h2>Creacion de Evento y sus Relaciones</h2>
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="jumbotron">
+		<div class="container">
+			
+			<h2 class="CAR">CREAR EVENTO</h2>
+			<br/>
+
+<h:form>
+		<h:panelGrid columns="4">
+		
+			<h:outputLabel value="Id" for="codigo"/>
+			<h:inputText id="codigo" value="#{eventoControlador.evento.codigo}" class="form-control"/>
+			<h:message for="codigo"/>
+			<br />
+			<br />
+			<h:outputLabel value="Fecha" for="fecha"/>
+			<h:inputText id="fecha" value="#{eventoControlador.evento.fecha}" class="form-control">
+			<f:convertDateTime pattern="yyyy/MM/dd" />
+			</h:inputText>
+			<h:message for="fecha"/>
+			<br />
+			<br />
+			<h:outputLabel value="Descripcion" for="descripcion"/>
+			<h:inputText id="descripcion"  value="#{eventoControlador.evento.descripcion}" class="form-control"/>
+			<h:message for="descripcion"/>
+			<br />
+			<br />
+			<h:outputLabel value="Representante" for="representante"/>
+			<h:inputText id="representante" value="#{eventoControlador.evento.representante}" class="form-control"/>
+			<h:message for="representante"/>
+			
+					<br />
+		</h:panelGrid>
+					<br />
+					<br />
+			<h2 class="card-inside-title">NUEVO CONCURSO</h2> <br />
+					
+					 <div class="col-xs-2">
+
+							<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Agregar Concurso" action="{eventoControlador.addConcurso()}"></h:commandButton>
+							<br />
+					</div>
+					<h:commandButton action="#{eventoControlador.removeConcurso()}" value="-concurso" />
+					<h:dataTable value="#{eventoControlador.evento.concursos}" var ="concurso">
+					
+						<h:column>
+							<f:facet name="header">Codigo</f:facet>
+							<h:inputText value="#{concurso.codigo}" />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header">Descripcion</f:facet>
+							<h:inputText value="#{concurso.descripcion}" />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header">nombre</f:facet>
+							<h:inputText value="#{concurso.nombre}" />
+						</h:column>
+					
+					</h:dataTable>
+					
+					<br />
+					
+					<h2 class="card-inside-title">CATEGORIA EVENTO</h2> 
+					<br />
+						 <div class="col-xs-2">
+
+								<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Agregar Evento" action="#{eventoControlador.addCategoria()}"></h:commandButton>
+								<br />
+						</div>
+					
+		            <h:dataTable value="#{eventoControlador.evento.categorias}" var = "categoria">
+					
+					
+						<h:column>
+							<f:facet name="header">Codigo</f:facet>
+							<h:inputText value="#{categoria.codigo}" />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header">Descripcion</f:facet>
+							<h:inputText value="#{categoria.descripcion}" />
+						</h:column>
+						
+						
+						<h:column>
+							<f:facet name="header">Nombre</f:facet>
+							<h:inputText value="#{categoria.nombre}" />
+						</h:column>
+					
+					</h:dataTable>
+				
+					<br />
+					
+					<h2 class="card-inside-title">GASTRONOMIA_EVENTO</h2> <br />
+						 <div class="col-xs-3">
+							<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Agregar Gastronomia" action="#{eventoControlador.addGastronomia()}"></h:commandButton>
+							<br />
+						</div>
+						<br />
+					<h:dataTable value="#{eventoControlador.evento.gastronomias}" var="gastronomia">
+						<h:column>
+							<f:facet name="header">Codigo</f:facet>
+							<h:inputText value="#{gastronomia.codigo}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">Descripcion</f:facet>
+							<h:inputText value="#{gastronomia.descripcion}" />
+						</h:column>
+					</h:dataTable>
+				
+				
+				<br />
+					
+					<h2 class="card-inside-title">Asistente_EVENTO</h2> <br />
+						<div class="col-xs-2">
+							<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Agregar Asistente" action="#{eventoControlador.addAsistente()}"></h:commandButton>
+							<br />
+						</div> 
+						<br />
+						
+					<h:dataTable value="#{eventoControlador.evento.asistentes}" var="asistente">
+					<h:column>
+						<f:facet name="header">Codigo</f:facet>
+						<h:inputText value="#{asistente.codigo}" />
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+						<h:inputText value="#{asistente.nombre}" />
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Cedula</f:facet>
+						<h:inputText value="#{asistente.cedula}" />
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Direccion</f:facet>
+						<h:inputText value="#{asistente.direccion}" />
+					</h:column>
+					
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:inputText value="#{asistente.email}" />
+					</h:column>
+					
+					
+					
+					<h:column>
+						<f:facet name="header">Telefono</f:facet>
+						<h:inputText value="#{asistente.telefono}" />
+					</h:column>
+					
+					
+					<h:column>
+							<f:facet name="header">Usuario</f:facet>
+							<h:inputText value="#{asistente.usuario}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">Password</f:facet>
+							<h:inputText value="#{asistente.password}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">Rol</f:facet>
+							<h:inputText value="#{asistente.rol}" />
+						</h:column>
+						
+						
+					</h:dataTable>
+				<br />		
+			
+			<div class="col-xs-2">
+
+				<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Guardar" action="#{eventoControlador.guardar()}"></h:commandButton>
+				<br />
+			</div>
+            <div class="col-xs-2">
+
+				<h:commandButton class="btn btn-block bg-pink waves-effect" type="submit" value=" Salir" action=""></h:commandButton>
+				<br />
+			</div>
+		</h:form>
+	</div>
+	</div>
+		    
+		    
+		    
+		    
             </div>
         </div>
     </section>
