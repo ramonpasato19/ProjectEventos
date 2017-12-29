@@ -1,11 +1,17 @@
 package ups.edu.ec.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -21,6 +27,7 @@ public class Evento implements Serializable{
 
 
 	@Id
+	@Column(name="even_codigo", length=10)
 	private int codigo;
 	
 	
@@ -31,7 +38,7 @@ public class Evento implements Serializable{
 	
 	@NotNull
 	@Column(name="eve_descripcion", length=10)
-	@Size(min=25,max=60)
+	@Size(min=5,max=60)
 	private String descripcion;
 	
 	
@@ -40,8 +47,7 @@ public class Evento implements Serializable{
 	@Size(min=6,max=25)
 	private String representante;
 	
-	
-//---------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------
 	@OneToMany(cascade= {CascadeType.ALL}, fetch = FetchType.EAGER)  //relacion entre Evento y Concurso, cascade tipo de comportamiendo en actualizacion borrado , etc....guaqrde el padre y automaticamente los hijos
 	@JoinColumn(name="evento", referencedColumnName="even_codigo") //como relacionan los campos
 	private List<Concurso> concursos;  //el evento tiene una lista de concursos
@@ -58,12 +64,52 @@ public class Evento implements Serializable{
 	@JoinColumn(name="evento", referencedColumnName="even_codigo")
 	private List<Asistente> asistentes;
 
-//---------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------
 
-
-
+	
+	
 	public int getCodigo() {
 		return codigo;
+	}
+
+
+	public List<Concurso> getConcursos() {
+		return concursos;
+	}
+
+
+	public void setConcursos(List<Concurso> concursos) {
+		this.concursos = concursos;
+	}
+
+
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
+
+	public List<Gastronomia> getGastronomias() {
+		return gastronomias;
+	}
+
+
+	public void setGastronomias(List<Gastronomia> gastronomias) {
+		this.gastronomias = gastronomias;
+	}
+
+
+	public List<Asistente> getAsistentes() {
+		return asistentes;
+	}
+
+
+	public void setAsistentes(List<Asistente> asistentes) {
+		this.asistentes = asistentes;
 	}
 
 
@@ -101,15 +147,14 @@ public class Evento implements Serializable{
 		this.representante = representante;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Evento [codigo=" + codigo + ", fecha=" + fecha + ", descripcion=" + descripcion + ", representante="
 				+ representante + ", concursos=" + concursos + ", categorias=" + categorias + ", gastronomias="
 				+ gastronomias + ", asistentes=" + asistentes + "]";
 	}
-	
-	
+
+
 	//----------------------------------------------------------------
 	public void addConcurso(Concurso concurso) {
 		if (concursos==null)
@@ -143,6 +188,7 @@ public class Evento implements Serializable{
 	}
 	
 	//----------------------------------------------------------------
+	
 	
 
 }
