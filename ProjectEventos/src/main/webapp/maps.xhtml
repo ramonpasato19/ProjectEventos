@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <title>Blank Page | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
-    <link  href="https://fonts.googleapis.com/css?subset=latin,cyrillic-ext"></link>
+    <link href="https://fonts.googleapis.com/css?subset=latin,cyrillic-ext" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
 
     <!-- Bootstrap Core Css -->
@@ -27,15 +27,13 @@
     <!-- Animation Css -->
     <link href="resources/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- JQuery DataTable Css -->
-    <link href="resources/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet"/>
-
     <!-- Custom Css -->
     <link href="resources/css/style.css" rel="stylesheet"/>
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="resources/css/themes/all-themes.css" rel="stylesheet" />
-</head>
+  
+</h:head>
 
 <body class="theme-red">
     <!-- Page Loader -->
@@ -75,7 +73,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.jsf">ADMINBSB - MATERIAL DESIGN</a>
+                <a class="navbar-brand" href="resources/index.xhtml">ADMINBSB - MATERIAL DESIGN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -281,7 +279,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="resources/images/user.png" width="48" height="48" alt="User" />
+                    <img src="resources/images/cuenca.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
@@ -306,7 +304,7 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="resources/index.html">
+                        <a href="resources/index.xhtml">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
@@ -431,7 +429,7 @@
                                 <a href="resources/pages/ui/range-sliders.html">Range Sliders</a>
                             </li>
                             <li>
-                                <a href="resources/pages/ui/sortable-nestable.html">Sortable  Nestable</a>
+                                <a href="resources/pages/ui/sortable-nestable.html">Sortable Nestable</a>
                             </li>
                             <li>
                                 <a href="resources/pages/ui/tabs.html">Tabs</a>
@@ -440,7 +438,7 @@
                                 <a href="resources/pages/ui/thumbnails.html">Thumbnails</a>
                             </li>
                             <li>
-                                <a href="resources/pages/ui/tooltips-popovers.html">Tooltips  Popovers</a>
+                                <a href="resources/pages/ui/tooltips-popovers.html">Tooltips Popovers</a>
                             </li>
                             <li>
                                 <a href="resources/pages/ui/waves.html">Waves</a>
@@ -473,7 +471,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>Tables</span>
@@ -482,7 +480,7 @@
                             <li>
                                 <a href="resources/pages/tables/normal-tables.html">Normal Tables</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="resources/pages/tables/jquery-datatable.html">Jquery Datatables</a>
                             </li>
                             <li>
@@ -527,7 +525,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">content_copy</i>
                             <span>Example Pages</span>
@@ -542,8 +540,34 @@
                             <li>
                                 <a href="resources/pages/examples/forgot-password.html">Forgot Password</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="resources/pages/examples/blank.html">Blank Page</a>
+                            </li>
+                            <li>
+                                <a href="resources/pages/examples/404.html">404 - Not Found</a>
+                            </li>
+                            <li>
+                                <a href="resources/pages/examples/500.html">500 - Server Error</a>
+                            </li>
+                        </ul>
+                    </li>
+                          <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">content_copy</i>
+                            <span>Registrar Datos</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="registrar-lugar.xhtml">Registrar Lugar</a>
+                            </li>
+                            <li>
+                                <a href="registrar-artista.xhtml">Registrar Artista</a>
+                            </li>
+                            <li>
+                                <a href="resources/pages/examples/forgot-password.html">Forgot Password</a>
+                            </li>
+                            <li>
+                                <a href="registrar-evento.xhtml">Registrar Evento</a>
                             </li>
                             <li>
                                 <a href="resources/pages/examples/404.html">404 - Not Found</a>
@@ -560,7 +584,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="resources/pages/maps/google.html">Google Map</a>
+                                <a href="menu.jsf">Google Map</a>
                             </li>
                             <li>
                                 <a href="resources/pages/maps/yandex.html">YandexMap</a>
@@ -643,7 +667,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">GUAMBRA - RAYMI</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.5
@@ -771,7 +795,7 @@
                             <li>
                                 <span>Auto Updates</span>
                                 <div class="switch">
-                                    <label><input type="checkbox" /><span class="lever"></span></label>
+                                    <label><input type="checkbox"/><span class="lever"></span></label>
                                 </div>
                             </li>
                         </ul>
@@ -796,235 +820,21 @@
         </aside>
         <!-- #END# Right Sidebar -->
     </section>
-
+									<ui:insert name="contenido1">
+							        contenido de la pagina-----------------------
+							        </ui:insert>
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
-                </h2>
+                <h2>Google Maps Eventos</h2>
+                                      
+                                    			
+							        
+							        
             </div>
-<h:form>           
-            <!-- Basic Examples -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                LISTA DE USUARIOS
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-<!--                                 <Table class="table table-bordered table-striped table-hover js-basic-example dataTable"> -->
-<!--                                 <h:dataTable  class="table table-bordered table-striped table-hover js-basic-example dataTable" width="100%" cellspacing="0" value="#{personaController.personas}" var="persona" rendered="#{not empty personaController.personas}"> -->
-<!-- 			<h:outputText class="form-control" value="No Existen Usuarios Registrados" rendered="#{empty personaController.personas}" /> -->
-			
-			<h:dataTable class="table table-striped" width="100%" cellspacing="0" value="#{asistenteControlador.asistentes}" var="asistente" rendered="#{not empty asistenteControlador.asistentes}">
-				
-				<!-- Mostrar cedula de identidad -->
-				<h:column>
-					<f:facet name="header">Codigo</f:facet>
-					#{asistente.codigo}
-				</h:column>
-				
-				<!-- Mostrar nombre persona -->
-				<h:column>
-					<f:facet name="header">Nombres</f:facet>
-					#{asistente.nombre}
-				</h:column>
-				
-				<!-- Mostrar apellido persona -->
-				<h:column>
-					<f:facet name="header">Cedula</f:facet>
-					#{asistente.cedula}
-				</h:column>
-				
-				<!-- Mostrar direccion -->
-				<h:column>
-					<f:facet name="header">Telefono</f:facet>
-					#{asistente.telefono}
-				</h:column>
-				
-				<!-- Mostrar correo -->
-				<h:column>
-					<f:facet name="header">Email</f:facet>
-					#{asistente.email}
-				</h:column>
-				
-				<h:column>
-					<f:facet name="header">Direccion</f:facet>
-					#{asistente.direccion}
-				</h:column>
-<!-- 								<h:column> -->
-<!-- 					<f:facet name="header">Rol</f:facet> -->
-<!-- 					#{asistente.rol} -->
-<!-- 				</h:column> -->
-								<h:column>
-					<f:facet name="header">Usuario</f:facet>
-					#{asistente.usuario}
-				</h:column>
-								<h:column>
-					<f:facet name="header">Contraseña</f:facet>
-					#{asistente.password}
-				</h:column>
-				<!-- Botones para editar o eliminar registros -->
-				<h:column>
-					<f:facet name="header">Acciones</f:facet>				
-					<!-- Pasamos a la pagina de edicion el parametro ci -->
-					<a href="#{request.contextPath}/faces/EditarCliente.xhtml?id=#{persona.ci}" class="btn btn-sm btn-info">
-      					<i class="material-icons">mode_edit</i>
-    					</a>
-					&nbsp;
-<!-- 					<h:commandLink class="btn btn-sm btn-danger" action="#{personaController.eliminarPersona(persona.ci)}"> -->
-					<h:commandLink class="btn btn-sm btn-danger" action="#{asistenteControlador.borrar(asistente.codigo)}">
-<!-- 						<i class="material-icons">person</i> -->
-						<i class="material-icons">delete</i> 
-						
-					</h:commandLink>
-					
-				</h:column>
-			</h:dataTable>
-<!--                                    <h:dataTable class="table"> -->
-<!--                                     <thead> -->
-<!--                                         <tr> -->
-<!--                                             <th>Codigo</th> -->
-<!--                                             <th>Nombre</th> -->
-<!--                                             <th>Cedula</th> -->
-<!--                                             <th>Telefono</th> -->
-<!--                                             <th>Email</th> -->
-<!--                                             <th>Direccion</th> -->
-<!--                                             <th>Rol</th> -->
-<!--                                             <th>Usuario</th> -->
-<!--                                             <th>Contraseña</th> -->
-<!--                                         </tr> -->
-<!--                                     </thead> -->
-<!--                                     <tfoot> -->
-<!--                                         <tr> -->
-<!--                                             <th>Codigo</th> -->
-<!--                                             <th>Nombre</th> -->
-<!--                                             <th>Cedula</th> -->
-<!--                                             <th>Telefono</th> -->
-<!--                                             <th>Email</th> -->
-<!--                                             <th>Direccion</th> -->
-<!--                                             <th>Rol</th> -->
-<!--                                             <th>Usuario</th> -->
-<!--                                             <th>Contraseña</th> -->
-<!--                                         </tr> -->
-<!--                                     </tfoot> -->
-<!--                                     <tbody> -->
-<!--                                         <tr value="#{asistenteControlador.asistente}" var="asistente" rendered="#{not empty asistenteControlador.asistentes}"> -->
-<!--                                         	<td th:text="##{asistente.codigo}"></td> -->
-<!--                                         	<td th:text="#{asistente.nombre}"></td> -->
-<!--                                         	<td th:text="#{asistente.cedula}"></td> -->
-<!--                                         	<td th:text="#{asistente.telefono}"></td> -->
-<!--                                         	<td th:text="#{asistente.email}"></td> -->
-<!--                                         	<td th:text="#{asistente.direccion}"></td> -->
-<!--                                         	<td th:text="#{asistente.rol}"></td> -->
-<!--                                         	<td th:text="#{asistente.usuario}"></td> -->
-<!--                                         	<td th:text="#{asistente.password}"></td> -->
-<!--                                         </tr> -->
-                                        
-<!--                                     </tbody> -->
-<!--                                 </Table> --> 
-<!-- 								</h:dataTable> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Basic Examples -->
-</h:form>
-            <!-- Exportable Table -->
-<h:form>
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                EXPORTAR DATOS
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <Table class="table table-bordered table-striped table-hover dataTable js-exportable">
-<!-- 				<zTable class="table table-striped" width="100%" cellspacing="0" value="#{personaController.personas}" var="persona" rendered="#{not empty personaController.personas}"> -->
-
-                                    <thead>
-                                        <tr>
-                                            <th>Codigo</th>
-                                            <th>Nombre</th>
-                                            <th>Cedula</th>
-                                            <th>Telefono</th>
-                                            <th>Email</th>
-                                            <th>Direccion</th>
-                                            <th>Rol</th>
-                                            <th>Usuario</th>
-                                            <th>Contraseña</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Codigo</th>
-                                            <th>Nombre</th>
-                                            <th>Cedula</th>
-                                            <th>Telefono</th>
-                                            <th>Email</th>
-                                            <th>Direccion</th>
-                                            <th>Rol</th>
-                                            <th>Usuario</th>
-                                            <th>Contraseña</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr th:each="asistente : ${asistenteControlador.asistente}">
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.nombre}"></td>
-                                        	<td th:text=""></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        	<td th:text="${asistente.codigo}"></td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-<!-- 								</h:dataTable> -->
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Exportable Table -->
-</h:form>
+            
         </div>
+       
     </section>
 
     <!-- Jquery Core Js -->
@@ -1042,20 +852,8 @@
     <!-- Waves Effect Plugin Js -->
     <script src="resources/plugins/node-waves/waves.js"></script>
 
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="resources/plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="resources/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
     <!-- Custom Js -->
     <script src="resources/js/admin.js"></script>
-    <script src="resources/js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Demo Js -->
     <script src="resources/js/demo.js"></script>
