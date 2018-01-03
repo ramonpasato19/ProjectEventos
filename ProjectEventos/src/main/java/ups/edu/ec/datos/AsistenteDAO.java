@@ -63,10 +63,6 @@ public class AsistenteDAO {
 	
 	//********************************************
 	
-	public List<Asistente> numeroAsistentes(){
-	Query query = em.createQuery("SELECT asi FROM Asistente asi", Asistente.class);
-
-	}
 	public List<Asistente> getUsuariosLogin(String correo,String clave){
 		
 		
