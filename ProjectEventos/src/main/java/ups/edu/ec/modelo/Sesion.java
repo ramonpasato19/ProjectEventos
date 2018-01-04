@@ -22,11 +22,11 @@ public class Sesion implements Serializable{
 	public void setUsuario(Asistente usuario) {
 		this.usuario = usuario;
 	}
-//	
-//	public String close(){
-//		 System.out.println("cerrando");
-//		 
-//		 
-//	}
+	
+	public void close(){
+		 System.out.println("cerrando");
+		 
+		 
+	}
 	
 }

@@ -88,7 +88,7 @@ public class LoginControlador {
 		for(int i=0;i<listadoLogin.size();i++){
 			if(listadoLogin.get(i).getRol()==1){
 				
-				FacesContext.getCurrentInstance().addMessage("", new FacesMessage("Usuario logeado", "Usuario logeado"));
+//				FacesContext.getCurrentInstance().addMessage("", new FacesMessage("Usuario logeado", "Usuario logeado"));
 				
 				return "index.jsf?faces-redirect=true";
 				
@@ -98,7 +98,7 @@ public class LoginControlador {
 				}
 			
 		}
-		FacesContext.getCurrentInstance().addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario ó Contraseña Invalidos!", "Usuario ó Contraseña Invalidos!"));
+//		FacesContext.getCurrentInstance().addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario ó Contraseña Invalidos!", "Usuario ó Contraseña Invalidos!"));
 		return "";
 	}
 
