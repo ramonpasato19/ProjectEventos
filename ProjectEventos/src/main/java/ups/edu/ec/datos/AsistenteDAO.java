@@ -64,36 +64,11 @@ public class AsistenteDAO {
 	//********************************************
 	
 	public List<Asistente> getUsuariosLogin(String correo,String clave){
-		
-		
-		String sql = "SELECT u FROM Usuario u "
-				+ "WHERE correo = ? "
-				+" AND clave = ?";
-	
 	Query q = em.createQuery("SELECT u FROM Asistente u WHERE asi_email = ?  AND asi_password = ?",Asistente.class);
 	q.setParameter(1, correo);
 	q.setParameter(2, clave);
-	
 	List<Asistente> personas = q.getResultList();
 	return personas;
 	
 	}
-	
-    public List<Asistente> getUsuariosLoginRC(String correo){
-		
-		
-		String sql = "SELECT u FROM Usuario u "
-				+ "WHERE correo = ? ";
-	
-	Query q = em.createQuery(sql,Asistente.class);
-	q.setParameter(1, correo);
-	@SuppressWarnings("unchecked")
-	List<Asistente> personas = q.getResultList();
-	return personas;
-	}
-	
-	
-	//*********************************************
-
-
 }

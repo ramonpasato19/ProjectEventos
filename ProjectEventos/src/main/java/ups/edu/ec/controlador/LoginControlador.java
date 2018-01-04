@@ -3,10 +3,14 @@ package ups.edu.ec.controlador;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import org.hibernate.validator.internal.util.logging.LoggerFactory;
 
 import ups.edu.ec.datos.AsistenteDAO;
 import ups.edu.ec.modelo.Asistente;
@@ -15,7 +19,6 @@ import ups.edu.ec.modelo.Sesion;
 
 @ManagedBean
 @SessionScoped
-
 public class LoginControlador {
 	
 	
@@ -23,13 +26,14 @@ public class LoginControlador {
 	private String correoIngresado;
 	private String claveIngresado;
 	
-	
 	private List<Asistente> listadoLogin;
+	
 	@Inject
 	private AsistenteDAO dao;
 	
 	@Inject
 	private Sesion sesion;
+	
 	
 	public Asistente getAsistente() {
 		return asistente;
@@ -79,51 +83,32 @@ public class LoginControlador {
 	
 	public String listar(){
 		
-		//System.out.println(getCorreoIngresado()+"dddddddddddddddddd");
 		listadoLogin = dao.getUsuariosLogin(correoIngresado,claveIngresado);
+		
 		for(int i=0;i<listadoLogin.size();i++){
-			System.out.println(listadoLogin.get(i).getEmail());
-			System.out.println(listadoLogin.get(i).getRol());
 			if(listadoLogin.get(i).getRol()==1){
 				
-				System.out.println("administrador");
-				return "index";
-			}else
-				if(listadoLogin.get(i).getRol()==2){
+				FacesContext.getCurrentInstance().addMessage("", new FacesMessage("Usuario logeado", "Usuario logeado"));
+				
+				return "index.jsf?faces-redirect=true";
+				
+			}else if(listadoLogin.get(i).getRol()==2){
 					
-					return "index";
+					return "index-3?faces-redirect=true";
 				}
+			
 		}
-		return null;
+		FacesContext.getCurrentInstance().addMessage("", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario ó Contraseña Invalidos!", "Usuario ó Contraseña Invalidos!"));
+		return "";
 	}
-	
-	
-	
-	public String login(){
-		Asistente usuario = (Asistente) dao.getUsuariosLogin(correoIngresado, claveIngresado);
-		if(usuario!=null){
-			sesion.setUsuario(usuario);
-			listadoLogin = dao.getUsuariosLogin(correoIngresado,claveIngresado);
-			for(int i=0;i<listadoLogin.size();i++){
-				System.out.println(listadoLogin.get(i).getEmail());
-				System.out.println(listadoLogin.get(i).getRol());
-				if(listadoLogin.get(i).getRol()==1){
-					
-					System.out.println("administrador");
-					return "principal_administrador";
-				}else
-					if(listadoLogin.get(i).getRol()==2){
-						
-						return "principal_huecas";
-					}
-			}
-		}
-		return null;
+
+	public Sesion getSesion() {
+		return sesion;
 	}
-	
-	
-	
-	
+
+	public void setSesion(Sesion sesion) {
+		this.sesion = sesion;
+	}	
 	
 	
 

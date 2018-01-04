@@ -18,6 +18,8 @@ public class Login {
 	
 	private String usuario;
 	private String password;
+	
+	
 	public AsistenteDAO getDao() {
 		return dao;
 	}
@@ -43,12 +45,5 @@ public class Login {
 		this.password = password;
 	}
 	
-	public String login(){
-		Asistente usuer = (Asistente)dao.getUsuariosLogin(usuario, password);
-		if(usuer!=null){
-			sesion.setUsuario(usuer);
-			return "index";
-		}
-		return null;
-	}
+
 }

@@ -287,13 +287,14 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
+            <h:form>
             <div class="user-info">
                 <div class="image">
                     <img src="resources/images/cuenca.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GuambraRaymi</div>
-                    <div class="email">admin@guambraraymi.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#{asistenteControlador.asistente.nombre}</div>
+                    <div class="email">#{asistenteControlador.asistente.email}</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -309,6 +310,7 @@
                     </div>
                 </div>
             </div>
+            </h:form>
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
