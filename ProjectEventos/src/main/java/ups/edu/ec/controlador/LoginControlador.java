@@ -90,11 +90,11 @@ public class LoginControlador {
 				
 //				FacesContext.getCurrentInstance().addMessage("", new FacesMessage("Usuario logeado", "Usuario logeado"));
 				
-				return "index.jsf?faces-redirect=true";
+				return "index.jsf";
 				
 			}else if(listadoLogin.get(i).getRol()==2){
 					
-					return "index-3?faces-redirect=true";
+					return "index-3";
 				}
 			
 		}
