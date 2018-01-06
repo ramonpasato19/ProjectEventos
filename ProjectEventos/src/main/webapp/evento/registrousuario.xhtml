@@ -10,6 +10,9 @@
 </h:head> 
 <body> 
 	<h:form>
+		<div style="float: right">
+		Usuario Actual: #{sessaoMB.usuario}
+		</div>
 		<h:panelGrid columns="2">
 			<h:outputText value="Nombres" />
 			<h:inputText value="#{usuarioControlador.usuario.nombre}" /> 

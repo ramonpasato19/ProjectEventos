@@ -6,22 +6,20 @@
       xmlns:p="http://primefaces.org/ui"> 
 
 <h:head></h:head> 
-<h:body> 
-<title>HOLA USUARIO</title>
+<body> 
 
 <h:form>
 	<p:messages/>
+	
 	<h:panelGrid columns="2">
 		<h:outputLabel value="User" />
-		<p:inputText value="#{sessaoMB.usuario}"/>
+		<p:inputText value="#{login.username}"/>
 		
 		<h:outputLabel value="Password" />
-		<p:inputText value="#{sessaoMB.senha}"/>	
+		<p:inputText value="#{login.username}"/>	
 	</h:panelGrid>
 	
-	<p:commandButton value="login" action="#{sessaoMB.login()}" 
-	
-	update="@form" process="@form"/>
+	<p:commandButton value="login" action="#{login.login()}"/>
 </h:form>
-</h:body> 
+</body> 
 </html>

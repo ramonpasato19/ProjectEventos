@@ -1,49 +1,62 @@
 package ups.edu.ec.controlador;
 
-import javax.faces.bean.ManagedBean;
-import javax.inject.Inject;
+import java.io.IOException;
 
-import ups.edu.ec.datos.AsistenteDAO;
-import ups.edu.ec.modelo.Asistente;
-import ups.edu.ec.modelo.Sesion;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
+@RequestScoped
 public class Login {
 
-	@Inject
-	private AsistenteDAO dao;
-	
-	@Inject
-	private Sesion sesion;
-	
-	private String usuario;
+    private String username;
 	private String password;
-	
-	
-	public AsistenteDAO getDao() {
-		return dao;
-	}
-	public void setDao(AsistenteDAO dao) {
-		this.dao = dao;
-	}
-	public Sesion getSesion() {
-		return sesion;
-	}
-	public void setSesion(Sesion sesion) {
-		this.sesion = sesion;
-	}
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
+	    
+	    
+	 public void login() {
+	        
+	        FacesContext context = FacesContext.getCurrentInstance();
 
+	        if(this.username.equals("admin") && this.password.equals("admin")){
+	            context.getExternalContext().getSessionMap().put("user", username);
+	            try {
+					context.getExternalContext().redirect("admin/Home.jsf");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+	        }
+	        else  {
+	            context.addMessage(null, new FacesMessage("Authentication Failed. Check username or password."));
+
+	        } 
+	    }
+
+	    public void logout() {
+	    	FacesContext context = FacesContext.getCurrentInstance();
+	    	context.getExternalContext().invalidateSession();
+	        try {
+				context.getExternalContext().redirect("Login.jsf");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    }
+	    
+	    
+		 public String getUsername() {
+				return username;
+			}
+
+			public void setUsername(String username) {
+				this.username = username;
+			}
+
+			public String getPassword() {
+				return password;
+			}
+
+			public void setPassword(String password) {
+				this.password = password;
+			}
 }
