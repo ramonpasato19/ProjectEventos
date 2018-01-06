@@ -26,8 +26,16 @@ public class Login {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-	        }
+	        }	        
 	        else  {
+	        	if (this.username.equals("user") && this.password.equals("user")) {
+	        		context.getExternalContext().getSessionMap().put("user", username);
+	        		try {
+	        			context.getExternalContext().redirect("admin/Home.jsf");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 	            context.addMessage(null, new FacesMessage("Authentication Failed. Check username or password."));
 
 	        } 
@@ -37,7 +45,7 @@ public class Login {
 	    	FacesContext context = FacesContext.getCurrentInstance();
 	    	context.getExternalContext().invalidateSession();
 	        try {
-				context.getExternalContext().redirect("Login.jsf");
+				context.getExternalContext().redirect("index-3.jsf");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

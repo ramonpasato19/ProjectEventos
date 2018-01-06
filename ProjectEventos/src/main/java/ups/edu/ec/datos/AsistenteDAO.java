@@ -71,4 +71,12 @@ public class AsistenteDAO {
 	return personas;
 	
 	}
+	
+	public List<Asistente> getUserLogin(String email,String passwrod){
+		Query q = em.createQuery("SELECT u FROM Asistente u WHERE asi_email = ?  AND asi_password = ?",Asistente.class);
+		q.setParameter(1, email);
+		q.setParameter(2, passwrod);
+		List<Asistente> personas = q.getResultList();
+		return personas;
+	}
 }
