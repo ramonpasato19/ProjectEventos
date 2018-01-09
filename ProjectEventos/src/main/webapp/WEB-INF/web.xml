@@ -26,7 +26,7 @@
 		<auth-constraint />
 	</security-constraint>
 	<welcome-file-list>
-		<welcome-file>index-3.jsf</welcome-file>
+		<welcome-file>index.jsf</welcome-file>
 	</welcome-file-list>
 <!-- 		<filter>   -->
 <!-- 		<filter-name>sec</filter-name>   -->

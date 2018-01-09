@@ -23,7 +23,7 @@ public class Myfilter implements Filter{
 		    HttpServletResponse response = (HttpServletResponse) resp;
 		    HttpSession session = request.getSession(false);
 		    
-		    String loginURI = request.getContextPath() + "/index-3.jsf";
+		    String loginURI = request.getContextPath() + "/index.jsf";
 
 		    boolean loggedIn = session != null && session.getAttribute("user") != null;
 		    boolean loginRequest = request.getRequestURI().equals(loginURI);

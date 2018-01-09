@@ -22,7 +22,7 @@ public class Login {
 	        if(this.username.equals("admin") && this.password.equals("admin")){
 	            context.getExternalContext().getSessionMap().put("user", username);
 	            try {
-					context.getExternalContext().redirect("admin/Home.jsf");
+					context.getExternalContext().redirect("admin/index.jsf");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -31,7 +31,7 @@ public class Login {
 	        	if (this.username.equals("user") && this.password.equals("user")) {
 	        		context.getExternalContext().getSessionMap().put("user", username);
 	        		try {
-	        			context.getExternalContext().redirect("admin/Home.jsf");
+	        			context.getExternalContext().redirect("admin/index.jsf");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -45,7 +45,7 @@ public class Login {
 	    	FacesContext context = FacesContext.getCurrentInstance();
 	    	context.getExternalContext().invalidateSession();
 	        try {
-				context.getExternalContext().redirect("index-3.jsf");
+				context.getExternalContext().redirect("index.jsf");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

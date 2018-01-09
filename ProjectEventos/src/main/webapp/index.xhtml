@@ -1,1192 +1,721 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-		xmlns:ui="http://java.sun.com/jsf/facelets"
-        xmlns:f="http://java.sun.com/jsf/core" 
-        xmlns:h="http://java.sun.com/jsf/html">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:h="http://java.sun.com/jsf/html" lang="en">
+
+<!-- Mirrored from gridgum.com/templates/Travel-agency/index-2.html by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 29 Dec 2017 02:00:50 GMT -->
+<head>
+<title>Guamgra Raymi</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Your description"/>
+<meta name="keywords" content="Your keywords"/>
+
+<link href="resources/index/css/bootstrap.css" rel="stylesheet"/>
+<link href="resources/index/css/font-awesome.css" rel="stylesheet"/>
+<link href="resources/index/css/superslides.css" rel="stylesheet"/>
+<link href="resources/index/css/animate.css" rel="stylesheet"/>
+<link href="resources/index/css/select2.css" rel="stylesheet"/>
+
+<link href="resources/index/css/smoothness/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+<link href="resources/index/css/style.css" rel="stylesheet"/>
+
+<script src="resources/index/js/jquery.js"></script>
+<script src="resources/index/js/jquery-ui.js"></script>
+<script src="resources/index/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="resources/index/js/jquery.easing.1.3.js"></script>
+<script src="resources/index/js/superfish.js"></script>
+
+<script src="resources/index/js/select2.js"></script>
+
+<script src="resources/index/js/jquery.superslides.js"></script>
+
+<script src="resources/index/js/jquery.parallax-1.1.3.resize.js"></script>
+
+<script src="resources/index/js/SmoothScroll.js"></script>
+
+<script src="resources/index/js/jquery.appear.js"></script>
+
+<script src="resources/index/js/jquery.caroufredsel.js"></script>
+<script src="resources/index/js/jquery.touchSwipe.min.js"></script>
+
+<script src="resources/index/js/jquery.ui.totop.js"></script>
+
+<script src="resources/index/js/script.js"></script>
 
 
-<h:head>
-<!--     <meta charset="UTF-8"/> -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  		
-    
-    <title>Bienvenido a la Plataforma de Eventos</title>
-    <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
-<!--     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css"> -->
-<!--     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/> -->
-<!--     <link href="https://fonts.googleapis.com/css?subset=latin,cyrillic-ext" rel="stylesheet" type="text/css"/> -->
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
+</head>
 
-    <!-- Bootstrap Core Css -->
-    <link href="resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+<body class="front superslides-version">
 
-    <!-- Waves Effect Css -->
-    <link href="resources/plugins/node-waves/waves.css" rel="stylesheet" />
+<div id="main">
 
-    <!-- Animation Css -->
-    <link href="resources/plugins/animate-css/animate.css" rel="stylesheet" />
-
-    <!-- Morris Chart Css-->
-    <link href="resources/plugins/morrisjs/morris.css" rel="stylesheet" />
-
-    <!-- Custom Css -->
-    <link href="resources/css/style.css" rel="stylesheet"/>
-
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="ProjectEventos/resources/css/themes/all-themes.css" rel="stylesheet" />
-</h:head>
-
-<body class="theme-red">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
+<div class="top1_wrapper">
+  <div class="container">
+    <div class="top1 clearfix">
+      <div class="email1"><a href="#">support@guambraraymi.com</a></div>
+      <div class="phone1">+593 959998254</div>
+      <div class="social_wrapper">
+        <ul class="social clearfix">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+        </ul>
+      </div>
+      
+        <div class="lang1">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">#{asistenteControlador.asistente.nombre}<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a class="ge" href="#">Perfil</a></li>
+            <li><a class="ru" href="#">Salir</a></li>
+          </ul>
         </div>
+      </div>
+      
+      
+      <div class="lang1">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">English<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a class="ge" href="#">German</a></li>
+            <li><a class="ru" href="#">Russian</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      
     </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
-        </div>
-        <input type="text" placeholder="START TYPING..."/>
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
-    <!-- #END# Search Bar -->
-    <!-- Top Bar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.jsf">GUAMBRA - RAYMI</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                    <!-- #END# Call Search -->
-                    <!-- Notifications -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">notifications</i>
-                            <span class="label-count">7</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">NOTIFICATIONS</li>
-                            <li class="body">
-                                <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">person_add</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>12 new members joined</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 14 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>4 sales made</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy Doe</b> deleted account</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange">
-                                                <i class="material-icons">mode_edit</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>Nancy</b> changed name</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> commented your post</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">cached</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> updated status</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-purple">
-                                                <i class="material-icons">settings</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Settings updated</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- #END# Notifications -->
-                    <!-- Tasks -->
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <i class="material-icons">flag</i>
-                            <span class="label-count">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">TASKS</li>
-                            <li class="body">
-                                <ul class="menu tasks">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Footer display issue
-                                                <small>32%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Make new buttons
-                                                <small>45%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Create new dashboard
-                                                <small>54%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Solve transition issue
-                                                <small>65%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <h4>
-                                                Answer GitHub questions
-                                                <small>92%</small>
-                                            </h4>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- #END# Tasks -->
-                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- #Top Bar -->
-    <section>
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-            <!-- User Info -->
-            <h:form>
-            <div class="user-info">
-                <div class="image">
-                    <img src="resources/images/cuenca.png" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#{asistenteControlador.asistente.nombre}</div>
-                    <div class="email">#{asistenteControlador.asistente.email}</div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="seperator" class="divider"></li>
-							<!--      <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>                       -->
-                            <li><a href="index-3.jsf"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            </h:form>
-            <!-- #User Info -->
-            <!-- Menu -->
-            <div class="menu">
-                <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
-                        <a href="index.jsf">
-                            <i class="material-icons">home</i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="resources/pages/typography.html">
-                            <i class="material-icons">text_fields</i>
-                            <span>Typography</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="resources/pages/helper-classes.html">
-                            <i class="material-icons">layers</i>
-                            <span>Helper Classes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">widgets</i>
-                            <span>Widgets</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Cards</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="resources/pages/widgets/cards/basic.html">Basic</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/cards/colored.html">Colored</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/cards/no-header.html">No Header</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Infobox</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="resources/pages/widgets/infobox/infobox-1.html">Infobox-1</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/infobox/infobox-2.html">Infobox-2</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/infobox/infobox-3.html">Infobox-3</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/infobox/infobox-4.html">Infobox-4</a>
-                                    </li>
-                                    <li>
-                                        <a href="resources/pages/widgets/infobox/infobox-5.html">Infobox-5</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">swap_calls</i>
-                            <span>User Interface (UI)</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="resources/pages/ui/alerts.html">Alerts</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/animations.html">Animations</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/badges.html">Badges</a>
-                            </li>
+  </div>
+</div>
 
-                            <li>
-                                <a href="resources/pages/ui/breadcrumbs.html">Breadcrumbs</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/buttons.html">Buttons</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/collapse.html">Collapse</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/colors.html">Colors</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/dialogs.html">Dialogs</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/icons.html">Icons</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/labels.html">Labels</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/list-group.html">List Group</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/media-object.html">Media Object</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/modals.html">Modals</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/pagination.html">Pagination</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/preloaders.html">Preloaders</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/progressbars.html">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/range-sliders.html">Range Sliders</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/sortable-nestable.html">Sortable  Nestable</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/tabs.html">Tabs</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/thumbnails.html">Thumbnails</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/tooltips-popovers.html">Tooltips  Popovers</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/ui/waves.html">Waves</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">assignment</i>
-                            <span>Forms</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="resources/pages/forms/basic-form-elements.html">Basic Form Elements</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/forms/advanced-form-elements.html">Advanced Form Elements</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/forms/form-examples.html">Form Examples</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/forms/form-validation.html">Form Validation</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/forms/form-wizard.html">Form Wizard</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/forms/editors.html">Editors</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">view_list</i>
-                            <span>Tablas</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="resources/pages/tables/normal-tables.html">Lista de Eventos </a>
-                            </li>
-                            <li>
-                                <a href="jquery-datatable.jsf">Lista de Asistentes</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/tables/editable-table.html">Editable Tables</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">perm_media</i>
-                            <span>Medias</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="resources/pages/medias/image-gallery.html">Image Gallery</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/medias/carousel.html">Carousel</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">pie_chart</i>
-                            <span>Charts</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="resources/pages/charts/morris.html">Morris</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/charts/flot.html">Flot</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/charts/chartjs.html">ChartJS</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/charts/sparkline.html">Sparkline</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/charts/jquery-knob.html">Jquery Knob</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">content_copy</i>
-                            <span>Example Pages</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="sign-in.xhtml">Sign In</a>
-                            </li>
-                            <li>
-                                <a href="sign-up.xhtml">Sign Up</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/forgot-password.html">Forgot Password</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/blank.html">Blank Page</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/404.html">404 - Not Found</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/500.html">500 - Server Error</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">content_copy</i>
-                            <span>Registrar Datos</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="registrar-lugar.jsf">Registrar Lugar</a>
-                            </li>
-                            <li>
-                                <a href="registrar-artista.jsf">Registrar Artista</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/forgot-password.html">Forgot Password</a>
-                            </li>
-                            <li>
-                                <a href="registrar-evento.jsf">Registrar Evento</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/404.html">404 - Not Found</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/examples/500.html">500 - Server Error</a>
-                            </li>
-                        </ul>
-                    </li>                    
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">map</i>
-                            <span>Maps</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="menu.jsf">Google Map</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/maps/yandex.html">YandexMap</a>
-                            </li>
-                            <li>
-                                <a href="resources/pages/maps/jvectormap.html">jVectorMap</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">trending_down</i>
-                            <span>Multi Level Menu</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <span>Menu Item</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <span>Menu Item - 2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Level - 2</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <span>Menu Item</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="menu-toggle">
-                                            <span>Level - 3</span>
-                                        </a>
-                                        <ul class="ml-menu">
-                                            <li>
-                                                <a href="javascript:void(0);">
-                                                    <span>Level - 4</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="resources/pages/changelogs.html">
-                            <i class="material-icons">update</i>
-                            <span>Changelogs</span>
-                        </a>
-                    </li>
-                    <li class="header">LABELS</li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <i class="material-icons col-red">donut_large</i>
-                            <span>Important</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <i class="material-icons col-amber">donut_large</i>
-                            <span>Warning</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <i class="material-icons col-light-blue">donut_large</i>
-                            <span>Information</span>
-                        </a>
-                    </li>
-                </ul>
+<div class="top2_wrapper">
+  <div class="container">
+    <div class="top2 clearfix">
+      <header>
+        <div class="logo_wrapper">
+          <a href="index-3.jsf" class="logo">
+            <img src="resources/index/images/pueblo.jpg" alt="" class="img-responsive"/>
+          </a>
+        </div>
+      </header>
+      <div class="navbar navbar_ navbar-default">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-collapse navbar-collapse_ collapse">
+          <ul class="nav navbar-nav sf-menu clearfix">
+			<li><a href="index-3.jsf">Home</a></li>
+            <li><a href="about.html">Quienes Somos</a></li>
+            <li><a href="contacts.html">Contactos</a></li>
+            <li><a href="sign-in.jsf">Ingresar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="home" class="">
+  <div id="slides_wrapper" class="">
+    <div id="slides">
+      <ul class="slides-container">
+        <li class="nav1">
+          <img src="resources/index/images/peru.jpg" alt="" class="img"/>
+          <div class="caption">
+            <div class="container">
+              <div class="txt1"><span>Bienvenidos</span></div>
+              <div class="txt2"><span>GUAMBRA RAYMI</span></div>
+              <div class="txt3"><span>La mejor plataforma de eventos de la nacion .</span></div>
             </div>
-            <!-- #Menu -->
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.5
-                </div>
+          </div>
+        </li>
+        <li class="nav2">
+          <img src="resources/index/images/peru.jpg" alt="" class="img"/>
+          <div class="caption">
+            <div class="container">
+              <div class="txt1"><span>1 - Fiestas de Carnaval</span></div>
+              <div class="txt2"><span>Playas de Sigsi - 2018</span></div>
+              <div class="txt3"><span>Ven y Disfruta de las Mejores fiestas.</span></div>
             </div>
-            <!-- #Footer -->
-        </aside>
-        <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
-            <ul class="nav nav-tabs tab-nav-right" role="tablist">
-                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
-                    <ul class="demo-choose-skin">
-                        <li data-theme="red" class="active">
-                            <div class="red"></div>
-                            <span>Red</span>
-                        </li>
-                        <li data-theme="pink">
-                            <div class="pink"></div>
-                            <span>Pink</span>
-                        </li>
-                        <li data-theme="purple">
-                            <div class="purple"></div>
-                            <span>Purple</span>
-                        </li>
-                        <li data-theme="deep-purple">
-                            <div class="deep-purple"></div>
-                            <span>Deep Purple</span>
-                        </li>
-                        <li data-theme="indigo">
-                            <div class="indigo"></div>
-                            <span>Indigo</span>
-                        </li>
-                        <li data-theme="blue">
-                            <div class="blue"></div>
-                            <span>Blue</span>
-                        </li>
-                        <li data-theme="light-blue">
-                            <div class="light-blue"></div>
-                            <span>Light Blue</span>
-                        </li>
-                        <li data-theme="cyan">
-                            <div class="cyan"></div>
-                            <span>Cyan</span>
-                        </li>
-                        <li data-theme="teal">
-                            <div class="teal"></div>
-                            <span>Teal</span>
-                        </li>
-                        <li data-theme="green">
-                            <div class="green"></div>
-                            <span>Green</span>
-                        </li>
-                        <li data-theme="light-green">
-                            <div class="light-green"></div>
-                            <span>Light Green</span>
-                        </li>
-                        <li data-theme="lime">
-                            <div class="lime"></div>
-                            <span>Lime</span>
-                        </li>
-                        <li data-theme="yellow">
-                            <div class="yellow"></div>
-                            <span>Yellow</span>
-                        </li>
-                        <li data-theme="amber">
-                            <div class="amber"></div>
-                            <span>Amber</span>
-                        </li>
-                        <li data-theme="orange">
-                            <div class="orange"></div>
-                            <span>Orange</span>
-                        </li>
-                        <li data-theme="deep-orange">
-                            <div class="deep-orange"></div>
-                            <span>Deep Orange</span>
-                        </li>
-                        <li data-theme="brown">
-                            <div class="brown"></div>
-                            <span>Brown</span>
-                        </li>
-                        <li data-theme="grey">
-                            <div class="grey"></div>
-                            <span>Grey</span>
-                        </li>
-                        <li data-theme="blue-grey">
-                            <div class="blue-grey"></div>
-                            <span>Blue Grey</span>
-                        </li>
-                        <li data-theme="black">
-                            <div class="black"></div>
-                            <span>Black</span>
-                        </li>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="why1">
+  <div class="container">
+
+    <h2 class="animated" data-animation="fadeInUp" data-animation-delay="100">POR QUE SOMOS LOS MEJORES</h2>
+
+    <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="200">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    <br>tincidunt ut laoreet dolore magna aliquam erat volutpat.</br></div>
+
+    <br></br>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="200">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="resources/index/images/why1.png" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/why1_hover.png" alt="" class="img2 img-responsive"/>
+              </figure>
+              <div class="caption">
+                <div class="txt1">Amazing Travel</div>
+                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                <div class="txt3">Read More</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="300">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="resources/index/images/why2.png" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/why2_hover.png" alt="" class="img2 img-responsive"/>
+              </figure>
+              <div class="caption">
+                <div class="txt1">Discover</div>
+                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                <div class="txt3">Read More</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="400">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="resources/index/images/why3.png" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/why3_hover.png" alt="" class="img2 img-responsive"/>
+              </figure>
+              <div class="caption">
+                <div class="txt1">Book Your Trip</div>
+                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                <div class="txt3">Read More</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumb2 animated" data-animation="flipInY" data-animation-delay="500">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure class="">
+                <img src="resources/index/images/why4.png" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/why4_hover.png" alt="" class="img2 img-responsive"/>
+              </figure>
+              <div class="caption">
+                <div class="txt1">Nice Support</div>
+                <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                <div class="txt3">Read More</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="parallax1" class="parallax">
+  <div class="bg1 parallax-bg"></div>
+  <div class="overlay"></div>
+  <div class="parallax-content">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-10 animated" data-animation="fadeInLeft" data-animation-delay="100">
+          <div class="txt1">Caucasus Vacation Packages</div>
+          <div class="txt2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</div>
+          <div class="txt3">From: Khazbegi (Goergia) <strong>$159.00</strong><span>person</span></div>
+        </div>
+        <div class="col-sm-2 animated" data-animation="fadeInRight" data-animation-delay="200">
+          <a href="#" class="btn-default btn0">Details</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="popular_cruises1">
+  <div class="container">
+
+    <h2 class="animated" data-animation="fadeInUp" data-animation-delay="100">EVENTOS POPULARES</h2>
+
+    <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="200">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    <br>tincidunt ut laoreet dolore magna aliquam erat volutpat.</br></div>
+
+    <br></br>
+
+    <div id="popular_wrapper" class="animated" data-animation="fadeIn" data-animation-delay="300">
+      <div id="popular_inner">
+        <div class="">
+          <div id="popular">
+            <div class="">
+              <div class="carousel-box">
+                <div class="inner">
+                  <div class="carousel main">
+                    <ul>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular01.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Bahamas <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Bahamas</span> 7 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star2.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 18 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular02.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Mediterranean <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Mediterranean</span> 18 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 168 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular03.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Greece <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Greece</span> 6 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star2.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 16 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular01.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Bahamas <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Bahamas</span> 7 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star2.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 18 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular02.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Mediterranean <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Mediterranean</span> 18 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 168 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="popular">
+                          <div class="popular_inner">
+                            <figure>
+                              <img src="resources/index/images/popular03.jpg" alt="" class="img-responsive"/>
+                              <div class="over">
+                                <div class="v1">Greece <span>17 Deal Offers</span></div>
+                                <div class="v2">Lorem ipsum dolor sit amet, concateus.</div>
+                              </div>
+                            </figure>
+                            <div class="caption">
+                              <div class="txt1"><span>Greece</span> 6 Night Tour</div>
+                              <div class="txt2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming.</div>
+                              <div class="txt3 clearfix">
+                                <div class="left_side">
+                                  <div class="stars1">
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star1.png" alt=""/>
+                                    <img src="resources/index/images/star2.png" alt=""/>
+                                  </div>
+                                  <div class="nums">- 16 Reviews</div>
+                                </div>
+                                <div class="right_side"><a href="#" class="btn-default btn1">See All</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+
+
+
+
+
+
+
                     </ul>
+                  </div>
                 </div>
-                <div role="tabpanel" class="tab-pane fade" id="settings">
-                    <div class="demo-settings">
-                        <p>GENERAL SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Report Panel Usage</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" /><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Email Redirect</span>
-                                <div class="switch">
-                                    <label><input type="checkbox"/><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>SYSTEM SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Notifications</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" /><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Auto Updates</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" /><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>ACCOUNT SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Offline</span>
-                                <div class="switch">
-                                    <label><input type="checkbox"/><span class="lever"></span></label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Location Permission</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" /><span class="lever"></span></label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
             </div>
-        </aside>
-        <!-- #END# Right Sidebar -->
-    </section>
-
-    <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>Panel de Eventos</h2>
-            </div>
-
-            <!-- Widgets -->
-            <div class="row clearfix">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-pink hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">playlist_add_check</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">Numero de Usuarios</div>
-                            <div class="number count-to" data-from="0" data-to="1" data-speed="15" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">help</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">NEW TICKETS</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-light-green hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">forum</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">NEW COMMENTS</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-orange hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">person_add</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">NEW VISITORS</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Widgets -->
-            <!-- CPU Usage -->
-            <div class="row clearfix">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <div class="row clearfix">
-                                <div class="col-xs-12 col-sm-6">
-                                    <h2>CPU USAGE (%)</h2>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 align-right">
-                                    <div class="switch panel-switch-btn">
-                                        <span class="m-r-10 font-12">REAL TIME</span>
-                                        <label>OFF<input type="checkbox" id="realtime" /><span class="lever switch-col-cyan"></span>ON</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="real_time_chart" class="dashboard-flot-chart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# CPU Usage -->
-            <div class="row clearfix">
-                <!-- Visitors -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                        <div class="body bg-pink">
-                            <div class="sparkline" data-type="line" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
-                                 data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)" data-spot-Color="rgb(255,255,255)"
-                                 data-offset="90" data-width="100%" data-height="92px" data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
-                                 data-fill-Color="rgba(0, 188, 212, 0)">
-                                12,10,9,6,5,6,10,5,7,5,12,13,7,12,11
-                            </div>
-                            <ul class="dashboard-stat-list">
-                                <li>
-                                    TODAY
-                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
-                                </li>
-                                <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
-                                </li>
-                                <li>
-                                    LAST WEEK
-                                    <span class="pull-right"><b>26 582</b> <small>USERS</small></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Visitors -->
-                <!-- Latest Social Trends -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                        <div class="body bg-cyan">
-                            <div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
-                            <ul class="dashboard-stat-list">
-                                <li>
-                                    #socialtrends
-                                    <span class="pull-right">
-                                        <i class="material-icons">trending_up</i>
-                                    </span>
-                                </li>
-                                <li>
-                                    #materialdesign
-                                    <span class="pull-right">
-                                        <i class="material-icons">trending_up</i>
-                                    </span>
-                                </li>
-                                <li>#adminbsb</li>
-                                <li>#freeadmintemplate</li>
-                                <li>#bootstraptemplate</li>
-                                <li>
-                                    #freehtmltemplate
-                                    <span class="pull-right">
-                                        <i class="material-icons">trending_up</i>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Latest Social Trends -->
-                <!-- Answered Tickets -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                        <div class="body bg-teal">
-                            <div class="font-bold m-b--35">ANSWERED TICKETS</div>
-                            <ul class="dashboard-stat-list">
-                                <li>
-                                    TODAY
-                                    <span class="pull-right"><b>12</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>15</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST WEEK
-                                    <span class="pull-right"><b>90</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST MONTH
-                                    <span class="pull-right"><b>342</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    LAST YEAR
-                                    <span class="pull-right"><b>4 225</b> <small>TICKETS</small></span>
-                                </li>
-                                <li>
-                                    ALL
-                                    <span class="pull-right"><b>8 752</b> <small>TICKETS</small></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Answered Tickets -->
-            </div>
-
-            <div class="row clearfix">
-                <!-- Task Info -->
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                    <div class="card">
-                        <div class="header">
-                            <h2>TASK INFOS</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-hover dashboard-task-infos">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Task</th>
-                                            <th>Status</th>
-                                            <th>Manager</th>
-                                            <th>Progress</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Task A</td>
-                                            <td><span class="label bg-green">Doing</span></td>
-                                            <td>GuambraRaymi</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Task B</td>
-                                            <td><span class="label bg-blue">To Do</span></td>
-                                            <td>GuambraRaymi</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Task C</td>
-                                            <td><span class="label bg-light-blue">On Hold</span></td>
-                                            <td>GuambraRaymi</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Task D</td>
-                                            <td><span class="label bg-orange">Wait Approvel</span></td>
-                                            <td>GuambraRaymi</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Task E</td>
-                                            <td>
-                                                <span class="label bg-red">Suspended</span>
-                                            </td>
-                                            <td>GuambraRaymi</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Task Info -->
-                <!-- Browser Usage -->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                        <div class="header">
-                            <h2>BROWSER USAGE</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="donut_chart" class="dashboard-donut-chart"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Browser Usage -->
-            </div>
+            <div class="popular_pagination"></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Jquery Core Js -->
-    <script src="resources/plugins/jquery/jquery.min.js"></script>
+<div id="happy1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-md-push-6">
+        <div class="content">
+          <div class="txt1 animated" data-animation="fadeIn" data-animation-delay="100">USUARIOS SATISFECHOS</div>
+          <div class="txt2 animated" data-animation="fadeIn" data-animation-delay="150">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, set amet. </div>
+          <div class="txt3 animated" data-animation="fadeIn" data-animation-delay="200">
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh oui-
+sod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit dolore magna aliquam erat voutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit..
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.
+            </p>
+          </div>
 
-    <!-- Bootstrap Core Js -->
-    <script src="resources/plugins/bootstrap/js/bootstrap.js"></script>
+          <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="0">
+            <div class="txt">Flights</div>
+            <div class="bg">
+              <div class="animated-distance" data-num="94" data-duration="1300" data-animation-delay="0"><span></span></div>
+            </div>
+          </div>
 
-    <!-- Select Plugin Js -->
-    <script src="resources/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+          <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="100">
+            <div class="txt">Hotels</div>
+            <div class="bg">
+              <div class="animated-distance" data-num="87" data-duration="1300" data-animation-delay="100"><span></span></div>
+            </div>
+          </div>
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="resources/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+          <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="200">
+            <div class="txt">Cars</div>
+            <div class="bg">
+              <div class="animated-distance" data-num="48" data-duration="1300" data-animation-delay="200"><span></span></div>
+            </div>
+          </div>
 
-    <!-- Waves Effect Plugin Js -->
-    <script src="resources/plugins/node-waves/waves.js"></script>
+          <div class="distance1 animated" data-animation="fadeInUp" data-animation-delay="300">
+            <div class="txt">Cruises</div>
+            <div class="bg">
+              <div class="animated-distance" data-num="51" data-duration="1300" data-animation-delay="300"><span></span></div>
+            </div>
+          </div>
 
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="resources/plugins/jquery-countto/jquery.countTo.js"></script>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-md-pull-6 animated" data-animation="fadeInLeft" data-animation-delay="200">
+        <img src="resources/index/images/people.png" alt="" class="img1 img-responsive"/>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Morris Plugin Js -->
-    <script src="resources/plugins/raphael/raphael.min.js"></script>
-    <script src="resources/plugins/morrisjs/morris.js"></script>
+<div id="partners">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="100">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner1.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner1_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="200">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner2.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner2_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="300">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner3.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner3_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="400">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner4.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner4_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="500">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner5.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner5_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-2 col-xs-6">
+        <div class="thumb1 animated" data-animation="flipInX" data-animation-delay="600">
+          <div class="thumbnail clearfix">
+            <a href="#">
+              <figure>
+                <img src="resources/index/images/partner6.jpg" alt="" class="img1 img-responsive"/>
+                <img src="resources/index/images/partner6_hover.jpg" alt="" class="img2 img-responsive"/>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- ChartJs -->
-    <script src="resources/plugins/chartjs/Chart.bundle.js"></script>
+    </div>
+  </div>
+</div>
 
-    <!-- Flot Charts Plugin Js -->
-    <script src="resources/plugins/flot-charts/jquery.flot.js"></script>
-    <script src="resources/plugins/flot-charts/jquery.flot.resize.js"></script>
-    <script src="resources/plugins/flot-charts/jquery.flot.pie.js"></script>
-    <script src="resources/plugins/flot-charts/jquery.flot.categories.js"></script>
-    <script src="resources/plugins/flot-charts/jquery.flot.time.js"></script>
+<div class="bot1_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="logo2_wrapper">
+          <a href="index-3.jsf" class="logo2">
+            <img src="resources/index/images/pueblo.jpg" alt="" class="img-responsive"/>
+          </a>
+        </div>
+        <p>
+          Nam liber tempor cum soluta nobis option congue nihil imperdiet doming id quod mazim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
+        </p>
+        <p>
+          <a href="#" class="btn-default btn2">Read More</a>
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <div class="bot1_title">Travel Specialists</div>
+        <ul class="ul1">
+          <li><a href="#">First Class Flights</a></li>
+          <li><a href="#">Accessible Travel</a></li>
+          <li><a href="#">Amazing Cruises</a></li>
+        </ul>
 
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="resources/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+        <div class="social2_wrapper">
+          <ul class="social2 clearfix">
+            <li class="nav1"><a href="#"></a></li>
+            <li class="nav2"><a href="#"></a></li>
+            <li class="nav3"><a href="#"></a></li>
+            <li class="nav4"><a href="#"></a></li>
+            <li class="nav5"><a href="#"></a></li>
+            <li class="nav6"><a href="#"></a></li>
+          </ul>
+        </div>
 
-    <!-- Custom Js -->
-    <script src="resources/js/admin.js"></script>
-    <script src="resources/js/pages/index.js"></script>
+      </div>
+      <div class="col-sm-3">
+        <div class="bot1_title">Our Twitter</div>
+        <div class="twits1">
+          <div class="twit1">
+           <a href="#"> @travel</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+           <div class="date">5 minutes ago</div>
+          </div>
+          <div class="twit1">
+           <a href="#">@leo</a> Nam liber tempor cum soluta nobis option congue nihil imperdiet doming id quod mazim.
+           <div class="date">2 days ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="bot1_title">Newsletter</div>
+        <div class="newsletter_block">
+          <div class="txt1">Inspiration, ideas, news and your feedback.</div>
+          <div class="newsletter-wrapper clearfix">
+          <form class="newsletter" action="javascript:;">
+            <input type="text" name="s" value='Email Address' onBlur="if(this.value=='') this.value='Email Address'" onFocus="if(this.value =='Email Address' ) this.value=''"/>
+            <a href="#" class="btn-default btn3">SUBMIT</a>
+          </form>
+        </div>
+        </div>
+        <div class="phone2">+593 959998254</div>
+        <div class="support1"><a href="#">support@guambraraymi</a></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Demo Js -->
-    <script src="resources/js/demo.js"></script>
+<div class="bot2_wrapper">
+  <div class="container">
+    <div class="left_side">
+      Copyright © 2017 <a href="#" target="_blank"><strong>MECOVACHE</strong></a>   <span>|</span>   <a href="#">Privacy Policy</a>   <span>|</span>   <a href="#">About Us</a>   <span>|</span>   <a href="#">FAQ</a>   <span>|</span>   <a href="#">Contact Support</a>
+            </div>
+            <div class="right_side">Designed by <a href="#" target="_blank"><strong>MECOVACHE</strong></a></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script src="resources/index/js/bootstrap.min.js"></script>
 </body>
 
+<!-- Mirrored from gridgum.com/templates/Travel-agency/index-2.html by HTTrack Website Copier/3.x [XR&CO'2010], Fri, 29 Dec 2017 02:01:03 GMT -->
 </html>
