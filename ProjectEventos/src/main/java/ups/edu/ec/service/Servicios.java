@@ -9,21 +9,18 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import ups.edu.ec.datos.AsistenteDAO;
 import ups.edu.ec.modelo.Asistente;
 
-@Path("/event")
+@Path("/evento")
 public class Servicios {
 	
 	@Inject
-	private AsistenteDAO daoasi;
-	//cuatro formas de ser consumido
-	
-	/*
-	 * (bien)
-	 */
+	private AsistenteDAO asidao;
+
 	
 	@GET
 	@Path("/saludo")
@@ -31,11 +28,7 @@ public class Servicios {
 	public String saludo(@QueryParam ("s") String nombre) {
 		return "hola "+ nombre;
 	}
-	
-	/*
-	 * (bien)
-	 */
-	
+
 	@GET
 	@Path("/suma")
 	@Produces("application/json")
@@ -43,53 +36,39 @@ public class Servicios {
 		return a+b;
 	}
 	
-	
-	//Datos datos = new Datos();
-	
-	@POST
-	@Path("/guardar")
-	@Produces("application/json")
-	//@Consumes("application/json")
-	public Respuesta guardar( Asistente usuario){
-		//System.out.println(httpHeaders.toString()+" LAS "+httpHeaders.getHeaderString("Authorization"));
-	//	String auth = httpHeaders.getHeaderString("Authorization");
-	//	System.out.println("Las credenciales son: {"+ auth+"}" );
-	//	System.out.println(httpHeaders.toString()+" LAS "+httpHeaders.getHeaderString("Authorization"));
-		Respuesta res=new Respuesta();
-		try{
-			daoasi.guardar(usuario);
-			res.setCodigo(1);
-			res.setMensaje("Lo has Logrado");
-		}catch (Exception e) {
-			res.setCodigo(99);
-			res.setMensaje("Error");
-		}
-		return res;
-	}
-	/*
-	 * este web servicios lista a todos los asistentes (bien)
-	 */
-	
 	@GET
 	@Path("/listar")
 	@Produces("application/json")
 	public List<Asistente> getPersonas(){
-		return daoasi.listadoAsistentes();
+		return asidao.listadoAsistentes();
 	}
-	
-	/*
-	 * este web servicio lista por id del asistente (bien)
-	 */
+
 	
 	@GET
-	@Path("/asistenteid")
+	@Path("/findasistenteid")
 	@Produces("application/json")
 	public Asistente getAsistenteId(@QueryParam("id") int id){
-		Asistente asi=daoasi.leer(id);
+		Asistente asi=asidao.leer(id);
 		System.out.println(asi);
 		return asi;
 	}
 	
+	
+	@POST
+	@Path("/saveAsistente")
+    @Consumes("application/json")
+    @Produces("application/json")
+	public Response crearAsistente(Asistente asistente) {
+		Response.ResponseBuilder builder =null;
+		try {
+			asidao.guardar(asistente);
+			builder = Response.ok();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return builder.build();
+		
+	}
 	
 //	@GET
 //	@Path("/asistentes")

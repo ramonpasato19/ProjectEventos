@@ -8,7 +8,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
-import org.apache.commons.collections.functors.IdentityPredicate;
 
 import ups.edu.ec.datos.ArtistaDAO;
 import ups.edu.ec.datos.CantonDAO;
