@@ -26,6 +26,7 @@ public class Parroquia implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue
 	@Column(name="par_codigo",length=10)
 	private int codigo;
 	
@@ -35,11 +36,18 @@ public class Parroquia implements Serializable{
 	@NotNull
 	private int codigopostal;
 
-	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
+	 @OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
 	@JoinColumn(name="parroquia",referencedColumnName="par_codigo")
-	private List<Sector> sectores;
+	private List<Sector> sectores=new ArrayList<Sector>();
 	
-	
+	 public List<Sector> getSectores() {
+		return sectores;
+	}
+
+	public void setSectores(List<Sector> sectores) {
+		this.sectores = sectores;
+	} 
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -64,28 +72,16 @@ public class Parroquia implements Serializable{
 		this.codigopostal = codigopostal;
 	}
 	
-	
-
-	public List<Sector> getSectores() {
-		return sectores;
-	}
-
-	public void setSectores(List<Sector> sectores) {
-		this.sectores = sectores;
-	}
-
 	@Override
 	public String toString() {
 		return "Parroquia [codigo=" + codigo + ", nombre=" + nombre + ", codigopostal=" + codigopostal + ", sectores="
 				+ sectores + "]";
 	}
 
-	
 	public void addSector(Sector sector) {
 		if (sectores==null)
 			sectores= new ArrayList<>();
 		sectores.add(sector);
-		
 		
 	}
 	

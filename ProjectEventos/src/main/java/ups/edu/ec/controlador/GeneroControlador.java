@@ -76,7 +76,7 @@ public class GeneroControlador {
 		System.out.println(genero);
 		gendao.guardar(genero);
 		loadGeneros();		
-		return "listado-generos";
+		return "index";
 		
 	}
 	

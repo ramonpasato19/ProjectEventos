@@ -24,6 +24,8 @@ public class ArtistaControlador {
 	
 	private int id;
 	
+	
+	
 	@PostConstruct
 	public void init() {
 		artista= new Artista();
@@ -89,7 +91,7 @@ public class ArtistaControlador {
 	public String loadDatosEditar(int id) {
 		System.out.println("Cargando datos de artistas a editar" + id);
 		artista = artdao.leer(id);
-		return "crear-artista";
+		return "artista-llamado";
 	}
 	
 	
@@ -97,7 +99,7 @@ public class ArtistaControlador {
 		System.out.println(artista);
 		artdao.guardar(artista);
 		loadArtistas();
-		return "listado-artistas";
+		return "index";
 		
 	}
 	

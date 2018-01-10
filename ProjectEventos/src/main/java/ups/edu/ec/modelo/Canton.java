@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -24,6 +25,7 @@ public class Canton implements Serializable{
 
 
 	@Id
+	@GeneratedValue
 	@Column(name="can_codigo", length=10)
 	private int codigo;
 	
@@ -34,13 +36,14 @@ public class Canton implements Serializable{
 	private String nombre;
 	//--------------------------------------------------------------
 
-	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
+//	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.EAGER)
+	@OneToMany(cascade= {CascadeType.ALL})
 	@JoinColumn(name="canton",referencedColumnName="can_codigo")
 	private List<Parroquia> parroquias;
 	
-	@OneToMany(cascade= {CascadeType.ALL})
-	@JoinColumn(name="sector", referencedColumnName="can_codigo")
-	private List<Sector>sectores;
+	
+	//--------------------------------------------------------------
+	
 	
 	//--------------------------------------------------------------
 	
@@ -61,14 +64,14 @@ public class Canton implements Serializable{
 	}
 
 
-	public List<Sector> getSectores() {
+	/*public List<Sector> getSectores() {
 		return sectores;
 	}
 
 
 	public void setSectores(List<Sector> sectores) {
 		this.sectores = sectores;
-	}
+	}*/
 
 
 	public void setCodigo(int codigo) {
@@ -86,13 +89,9 @@ public class Canton implements Serializable{
 	}
 
 
-	
-	
-	
 	@Override
 	public String toString() {
-		return "Canton [codigo=" + codigo + ", nombre=" + nombre + ", parroquias=" + parroquias + ", sectores="
-				+ sectores + "]";
+		return "Canton [codigo=" + codigo + ", nombre=" + nombre + ", parroquias=" + parroquias + "]";
 	}
 
 
@@ -103,13 +102,13 @@ public class Canton implements Serializable{
 		parroquias.add(parroquia);
 	}
 	
-	public void addSector(Sector sector) {
+	/*public void addSector(Sector sector) {
 		if (sectores==null)
 			sectores=new ArrayList<>();
 		sectores.add(sector);
 			
 		
-	}
+	}*/
 	
 	//--------------------------------------------------------------
 

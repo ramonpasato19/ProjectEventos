@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,6 +18,7 @@ public class Concurso implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue
 	private int codigo;
 	
 	@NotNull
@@ -27,7 +29,7 @@ public class Concurso implements Serializable{
 	
 	@NotNull
 	@Column(name="con_descripcion", length=10)
-	@Size(min=25,max=60)
+	@Size(min=5,max=60)
 	private String descripcion;
 
 

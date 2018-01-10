@@ -5,13 +5,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.SectorDAO;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class SectorControlador {
 	@Inject
 	private SectorDAO secdao;

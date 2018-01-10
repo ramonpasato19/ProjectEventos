@@ -25,8 +25,6 @@ public class Sesion implements Serializable{
 	
 	public void close(){
 		 System.out.println("cerrando");
-		 
-		 
 	}
 	
 }

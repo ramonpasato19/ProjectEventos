@@ -21,6 +21,7 @@ public class Sector implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue
 	private int codigo;
 	
 	@NotNull
@@ -32,6 +33,7 @@ public class Sector implements Serializable{
 	private String direccion;
 
 
+	
 
 	public int getCodigo() {
 		return codigo;
@@ -73,6 +75,9 @@ public class Sector implements Serializable{
 	public String toString() {
 		return "Sector [codigo=" + codigo + ", nombre=" + nombre + ", direccion=" + direccion + "]";
 	}
+
+
+
 	
 	
 	

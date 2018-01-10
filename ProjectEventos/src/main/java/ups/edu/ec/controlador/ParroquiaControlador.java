@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.ParroquiaDAO;
@@ -14,13 +15,13 @@ import ups.edu.ec.modelo.Parroquia;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class ParroquiaControlador {
 	
 	@Inject
 	private ParroquiaDAO pardao;
 	private Parroquia parroquia;
-	private List<Parroquia> parroquias;
+	private List<Parroquia>parroquias;
 	
 	private int id;
 	
@@ -29,7 +30,7 @@ public class ParroquiaControlador {
 	public void init() {
 	parroquia = new Parroquia();
 	parroquia.addSector(new Sector());
-	//loadParroquias();
+	
 	}
 
 
@@ -100,7 +101,8 @@ public class ParroquiaControlador {
 	
 	public String guardar() {
 		System.out.println(parroquia);
-		pardao.guardar(parroquia);
+		//pardao.guardar(parroquia);
+		pardao.insertar(parroquia);
 		loadParroquias();
 		return "listado-parroquias";
 	}
@@ -112,9 +114,10 @@ public class ParroquiaControlador {
 		return "listado-parroquias";
 	}
 	
+	
 	public String addSector() {
 	parroquia.addSector(new Sector());
-	
 	return null;
 	}
+	
 }

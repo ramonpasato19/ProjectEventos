@@ -14,7 +14,6 @@ import ups.edu.ec.modelo.Parroquia;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
-//@SessionScoped
 @ViewScoped
 public class CantonControlador {
 
@@ -23,14 +22,34 @@ public class CantonControlador {
 	private Canton canton;
 	private List<Canton>cantones;
 	
+	private int id;
+	
 	@PostConstruct
 	private void init() {
 		canton = new Canton();
 		//---------------------------------------
-		canton.addParroquia(new Parroquia());
-		canton.addSector(new Sector());
+				canton.addParroquia(new Parroquia());
+				//canton.addSector(new Sector());
 		//---------------------------------------
 	}
+	
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
 	public CantonDAO getCandao() {
 		return candao;
 	}
@@ -67,32 +86,31 @@ public class CantonControlador {
 	public String loadDatosEditar(int id) {
 		System.out.println("Cargando datos de caton a editar" + id);
 		canton = candao.leer(id);
-		return "crear-canton";
+		return "registrar-lugar";
 	}
 	
 	public String guardar() {
 		System.out.println(canton);
 		candao.guardar(canton);
 		loadCantones();
-		return "listado-cantones";
+		return "index";
 	}
 	
 	public String borrar(int id) {
 		candao.borrar(id);
 		loadCantones();
-		return "listado-cantones";
+		return "Listado-de-cantones";
 	}
 	
 	//---------------------------------------
 	public String addParroquia() {
-			
 			canton.addParroquia(new Parroquia());
 			return null;
 		}
 		
-		public String addSector() {
+		/*public String addSector() {
 			canton.addSector(new Sector());
 			return null;
-		}
+		}*/
 	//---------------------------------------
 }

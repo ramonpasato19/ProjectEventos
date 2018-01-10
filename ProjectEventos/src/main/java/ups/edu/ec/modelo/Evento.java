@@ -9,13 +9,17 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import ups.edu.ec.controlador.ParroquiaControlador;
 
 @Entity
 public class Evento implements Serializable{
@@ -27,6 +31,7 @@ public class Evento implements Serializable{
 
 
 	@Id
+	@GeneratedValue
 	@Column(name="even_codigo", length=10)
 	private int codigo;
 	
@@ -48,22 +53,30 @@ public class Evento implements Serializable{
 	private String representante;
 	
 	//---------------------------------------------------------------------------------------
-	@OneToMany(cascade= {CascadeType.ALL}, fetch = FetchType.EAGER)  //relacion entre Evento y Concurso, cascade tipo de comportamiendo en actualizacion borrado , etc....guaqrde el padre y automaticamente los hijos
+	@OneToMany(cascade= {CascadeType.ALL})  //relacion entre Evento y Concurso, cascade tipo de comportamiendo en actualizacion borrado , etc....guaqrde el padre y automaticamente los hijos
 	@JoinColumn(name="evento", referencedColumnName="even_codigo") //como relacionan los campos
 	private List<Concurso> concursos;  //el evento tiene una lista de concursos
 	
-	@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+	@OneToMany(cascade = {CascadeType.ALL} )
 	@JoinColumn(name="evento", referencedColumnName="even_codigo")
 	private List<Categoria> categorias;
 	
-	@OneToMany(cascade= {CascadeType.ALL}, fetch= FetchType.LAZY)
+	@OneToMany(cascade= {CascadeType.ALL})
 	@JoinColumn(name="evento", referencedColumnName="even_codigo")
 	private List<Gastronomia> gastronomias;
 	
-	@OneToMany(cascade= {CascadeType.ALL}, fetch=FetchType.LAZY)
-	@JoinColumn(name="evento", referencedColumnName="even_codigo")
-	private List<Asistente> asistentes;
-
+	//------------------------------------------------
+	@ManyToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="canto")
+	private Canton canton;
+	
+	@ManyToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="artista")
+	private Artista artista;
+	
+//	@ManyToOne(cascade= {CascadeType.ALL})
+//	@JoinColumn(name="artista")
+//	private Canton canton;
 	//---------------------------------------------------------------------------------------
 
 	
@@ -71,6 +84,33 @@ public class Evento implements Serializable{
 	public int getCodigo() {
 		return codigo;
 	}
+
+
+	public Artista getArtista() {
+		return artista;
+	}
+
+
+	public void setArtista(Artista artista) {
+		this.artista = artista;
+	}
+
+
+	public Canton getCanton() {
+		return canton;
+	}
+
+
+	public void setCanton(Canton canton) {
+		this.canton = canton;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 
 	public List<Concurso> getConcursos() {
@@ -102,15 +142,7 @@ public class Evento implements Serializable{
 		this.gastronomias = gastronomias;
 	}
 
-
-	public List<Asistente> getAsistentes() {
-		return asistentes;
-	}
-
-
-	public void setAsistentes(List<Asistente> asistentes) {
-		this.asistentes = asistentes;
-	}
+	
 
 
 	public void setCodigo(int codigo) {
@@ -147,11 +179,16 @@ public class Evento implements Serializable{
 		this.representante = representante;
 	}
 
+	
+
+	
+
+
 	@Override
 	public String toString() {
 		return "Evento [codigo=" + codigo + ", fecha=" + fecha + ", descripcion=" + descripcion + ", representante="
 				+ representante + ", concursos=" + concursos + ", categorias=" + categorias + ", gastronomias="
-				+ gastronomias + ", asistentes=" + asistentes + "]";
+				+ gastronomias + ", canton=" + canton + ", artista=" + artista + "]";
 	}
 
 
@@ -174,18 +211,17 @@ public class Evento implements Serializable{
 		gastronomias.add(gastronomia);
 	}
 	
-	public void addAsistente(Asistente asistente) {
-		if (asistentes==null)
-			asistentes=new ArrayList<>();
-		asistentes.add(asistente);
-	}
 	
 	
-	public void removeConcurso(Concurso concurso) {
-		if (concursos==null)
-			concursos= new ArrayList<>();
-		concursos.remove(concurso);
-	}
+	
+//	public void removeConcurso(Concurso concurso) {
+//		if (concursos==null)
+//			concursos= new ArrayList<>();
+//		concursos.remove(concurso);
+//	}
+//	
+	
+	
 	
 	//----------------------------------------------------------------
 	
