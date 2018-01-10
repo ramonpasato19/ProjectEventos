@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p1="http://primefaces.org/ui"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:h="http://java.sun.com/jsf/html"> 
@@ -9,7 +10,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <title>Listado Usuarios | GuambraRaymi</title>
     <!-- Favicon-->
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 
@@ -836,56 +837,59 @@
 <!--                                 <h:dataTable  class="table table-bordered table-striped table-hover js-basic-example dataTable" width="100%" cellspacing="0" value="#{personaController.personas}" var="persona" rendered="#{not empty personaController.personas}"> -->
 <!-- 			<h:outputText class="form-control" value="No Existen Usuarios Registrados" rendered="#{empty personaController.personas}" /> -->
 			
-		<h:dataTable class="table table-striped" width="100%" cellspacing="0" value="#{asistenteControlador.asistentes}" var="asistente" rendered="#{not empty asistenteControlador.asistentes}">
+		<p1:dataTable class="table table-striped" width="100%" cellspacing="0" value="#{asistenteControlador.asistentes}" var="asistente" rendered="#{not empty asistenteControlador.asistentes}">
 				
 				<!-- Mostrar cedula de identidad -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Codigo</f:facet>
 					#{asistente.codigo}
-				</h:column>
+				</p1:column>
 				
 				<!-- Mostrar nombre persona -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Nombres</f:facet>
 					#{asistente.nombre}
-				</h:column>
+				</p1:column>
 				
 				<!-- Mostrar apellido persona -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Cedula</f:facet>
 					#{asistente.cedula}
-				</h:column>
+				</p1:column>
 				
 				<!-- Mostrar direccion -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Telefono</f:facet>
 					#{asistente.telefono}
-				</h:column>
+				</p1:column>
 				
 				<!-- Mostrar correo -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Email</f:facet>
 					#{asistente.email}
-				</h:column>
+				</p1:column>
 				
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Direccion</f:facet>
 					#{asistente.direccion}
-				</h:column>
+				</p1:column>
 <!-- 								<h:column> -->
 <!-- 					<f:facet name="header">Rol</f:facet> -->
 <!-- 					#{asistente.rol} -->
 <!-- 				</h:column> -->
-								<h:column>
+				
+				<p1:column>
 					<f:facet name="header">Usuario</f:facet>
 					#{asistente.usuario}
-				</h:column>
-								<h:column>
+				</p1:column>
+				
+				<p1:column>
 					<f:facet name="header">Contraseña</f:facet>
 					#{asistente.password}
-				</h:column>
+				</p1:column>
+				
 				<!-- Botones para editar o eliminar registros -->
-				<h:column>
+				<p1:column>
 					<f:facet name="header">Acciones</f:facet>				
 					<!-- Pasamos a la pagina de edicion el parametro ci -->
 					<a href="#{request.contextPath}/faces/EditarCliente.xhtml?id=#{persona.ci}" class="btn btn-sm btn-info">
@@ -899,8 +903,8 @@
 						
 					</h:commandLink>
 					
-				</h:column>
-			</h:dataTable>
+				</p1:column>
+			</p1:dataTable>
 		
 <!--                                    <h:dataTable class="table"> -->
 <!--                                     <thead> -->

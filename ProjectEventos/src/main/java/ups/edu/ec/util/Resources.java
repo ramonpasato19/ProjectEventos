@@ -14,7 +14,6 @@ public class Resources {
 	@PersistenceContext
 	private EntityManager em;
 	
-	
 	   @Produces
 	   public Logger produceLog(InjectionPoint injectionPoint) {
 	      return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
@@ -25,5 +24,5 @@ public class Resources {
 	   public FacesContext produceFacesContext() {
 	      return FacesContext.getCurrentInstance();
 	   }
-
+	   
 }

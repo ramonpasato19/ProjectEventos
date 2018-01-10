@@ -33,16 +33,19 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
-//	@NotEmpty
-//  @NotNull
-	@Column(unique = true)
-	private String cedula;
-	
 	@NotEmpty
     @NotNull
     @Size(min = 1, max = 25)
     @Pattern(regexp = "[^0-9]*", message = "Must not contain numbers")
 	private String nombre;
+	
+	
+//	@NotEmpty
+//  @NotNull
+	@Column(unique = true)
+	private String cedula;
+	
+
 	
     @Size(min = 7, max = 12)
     @Digits(fraction = 0, integer = 12)

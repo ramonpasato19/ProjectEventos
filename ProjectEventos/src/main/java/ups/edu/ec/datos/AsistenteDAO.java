@@ -23,7 +23,8 @@ public class AsistenteDAO {
 	public void guardar(Asistente asi) {
 		Asistente aux = leer(asi.getCodigo());
 		if(aux!=null){
-			actulizar(asi);
+			insertar(asi);
+//			actulizar(asi);
 		}else {
 			insertar(asi);
 		}
@@ -32,7 +33,8 @@ public class AsistenteDAO {
 	
 	public void insertar (Asistente asi) {
 		
-		em.persist(asi);
+//		em.persist(asi);
+		em.merge(asi);
 	}
 	
 	public void actulizar (Asistente asi) {

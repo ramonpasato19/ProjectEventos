@@ -4,12 +4,17 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
@@ -18,54 +23,60 @@ public class Asistente implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8798414217986934925L;
 
 	@Id
-	@Column(name="asi_id", nullable=false, unique=true)
+	@Column(name="asi_id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
-	@NotNull
+	
 	@Column(name="asi_nombre")
-	@Size(min=4,max=25)
+	@NotEmpty
+    @NotNull
+    @Size(min = 4, max = 25)
+    @Pattern(regexp = "[^0-9]*", message = "No deberia contener numeros")
 	private String nombre;
 	
-	@NotNull
-	@Column(name="asi_cedula", length=10)
+
+	@Column(name="asi_cedula",unique=true)
 	@Size(max=10)
 	private String cedula;
 	
 	
-	@NotNull
-	@Column(name="asi_telefono", length=10)
-	//@Size(max=10)
-	private int telefono;
+    @Size(min = 7, max = 12)
+    @Digits(fraction = 0, integer = 12)
+    @Pattern(regexp="(^$|[0-9]{10})")
+	@Column(name="asi_telefono")
+	private String telefono;
 	
 	
 	
 	@NotNull
+	@NotEmpty
 	@Email
-	@Column(name="asi_email")
+	@Column(name="asi_email",unique=true)
 	private String email;
 	
-	@NotNull
+	
 	@Column(name="asi_direccion")
 	@Size(min=4,max=25)
 	private String direccion;
 	
 	
-	@NotNull
-	@Column(name="asi_usuario",nullable=false, unique=true)
+	@Column(name="asi_usuario",unique=true)
 	@Size(min=6,max=15)
 	private String usuario;
 	
 	
 	
 	@NotNull
-	@Column(name="asi_password",nullable=false, unique=false)
+	@NotEmpty
+	@Column(name="asi_password", unique=false)
 	@Size(min=6,max=15)
 	private String password;
 
-	@Column(name = "use_rol",length = 20)
+	@Column(name = "use_rol")
 	private int rol;
 
 	public int getCodigo() {
@@ -104,13 +115,14 @@ public class Asistente implements Serializable{
 
 
 
-	public int getTelefono() {
+
+	public String getTelefono() {
 		return telefono;
 	}
 
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 

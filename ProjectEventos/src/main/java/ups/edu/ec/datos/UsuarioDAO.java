@@ -20,6 +20,8 @@ public class UsuarioDAO extends BaseDAO<Usuario> {
 	}
 	
 	
+	
+	
 	public List<Asistente> getUsuariosLogin(String correo,String clave){
 		
 		

@@ -24,7 +24,7 @@ public class AsistenteControlador {
 	private List<Asistente> asistentes;
 	
 	
-	//
+	
 	@PostConstruct
 	public void init() {
 		asistente =  new Asistente();
@@ -73,7 +73,7 @@ public class AsistenteControlador {
 		System.out.println(asistente);
 		asidao.guardar(asistente);
 		loadAsistentes();
-		return "jquery-datatable";
+		return "index";
 		
 	}
 	

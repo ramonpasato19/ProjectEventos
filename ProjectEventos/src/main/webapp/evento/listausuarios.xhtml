@@ -10,7 +10,7 @@
 
 </h:head> 
 <body> 
-   <h:form>
+   <h:form id="listaru">
 	<p:dataTable value="#{usuarioControlador.usuarios}" var="u">
 
 			<p:column>
@@ -32,9 +32,36 @@
 			<f:facet name="header">Contraseña</f:facet>
 			#{u.password}
 			</p:column>
-	
+			<p:column>
+			
+			<p:commandButton oncomplete="PF('usua').show()"
+			process="@this" update=":deta">
+			 <f:setPropertyActionListener value="#{u}" 
+			 target="#{usuarioControlador.usuario}"/>
+			</p:commandButton>
+			
+			
+			</p:column>
 		</p:dataTable>
 	</h:form>
+	<p:dialog modal="true" height="400" width="400" widgetVar="usua">
+	<h:form id="deta">
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Nombre:" />
+		<p:inputText value="#{usuarioControlador.usuario.nombre}"></p:inputText>
+		
+		<h:outputLabel value="Email:" />
+		<p:inputText value="#{usuarioControlador.usuario.email}"></p:inputText>
+		
+		<h:outputLabel value="Contraseña:" />
+		<p:inputText value="#{usuarioControlador.usuario.password}"></p:inputText>
+	</h:panelGrid>
+	<p:commandButton value="Actualizar"
+	action="#{usuarioControlador.salvar()}"
+	process="@form" update="@form :listaru"/> 
+	</h:form>
+	
+	</p:dialog>
 	
 </body> 
 </html>
