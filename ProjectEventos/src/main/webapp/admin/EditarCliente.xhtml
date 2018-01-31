@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head>
+
+ 
+<body> 
+<f:metadata>
+  <f:viewParam name="id" value="#{asistenteControlador.id}"/>
+</f:metadata>
+<h:form>
+<!-- 	<h:inputText value="#{asistenteControlador.id}" /> -->
+
+	<h:panelGrid columns="3">
+		<h:outputLabel value="nombre:" for="nombre"/>
+		<h:inputText id="nombre" value="#{asistenteControlador.asistente.nombre}"/>
+		<h:message for="nombre"/>
+		
+		<h:outputLabel value="email:" for="email"/>
+		<h:inputText id="email" value="#{asistenteControlador.asistente.email}"/>
+		<h:message for="email"/>
+		
+		<h:outputLabel value="password:" for="password"/>
+		<h:inputText id="password" value="#{asistenteControlador.asistente.password}"/>
+		<h:message for="password"/>
+		
+
+		
+		
+		<h:commandButton action="#{asistenteControlador.guardar()}" value="Guardar" />
+		<h:commandButton action="jquery-datatable" value="Cancelar" />
+		<h:messages globalOnly="true"/>
+	
+	</h:panelGrid>
+</h:form>
+
+
+</body> 
+</html>
