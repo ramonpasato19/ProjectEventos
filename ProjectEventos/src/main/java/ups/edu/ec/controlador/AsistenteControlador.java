@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
@@ -15,7 +16,7 @@ import ups.edu.ec.datos.AsistenteDAO;
 import ups.edu.ec.modelo.Asistente;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class AsistenteControlador {
 	
 	@Inject

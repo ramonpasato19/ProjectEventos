@@ -71,6 +71,36 @@
 		              		lng: -78.924289
 
 		             };
+	            	var pos3 = {
+		              		lat: -2.781443,
+		              		lng: -78.759034
+
+		             };
+	            	var pos4 = {
+		              		lat: -2.907077,
+		              		lng: -79.00662
+
+		             };
+	            	var pos5 = {
+		              		lat: -2.897539,
+		              		lng: -79.026395
+
+		             };
+	            	var pos6 = {
+		              		lat: -3.013749,
+		              		lng: -79.034701
+
+		             };
+	            	var pos6 = {
+		              		lat: -2.566487,
+		              		lng: -78.937841
+
+		             };
+	            	var pos7 = {
+		              		lat: -2.566487,
+		              		lng: -78.937841
+
+		             };
 
 	            	var image = 'imagenes/bandera.jpg';
 
@@ -86,8 +116,8 @@
 	          			map: map,
 	          			draggable: true,
 	          			animation: google.maps.Animation.DROP,
-	          			label: 'SB.......',
-	          			title: 'San Blas'
+	          			label: 'Norte',
+	          			title: 'Norte'
 		          		
 	        		});
 	           		var marker2 = new google.maps.Marker({
@@ -95,11 +125,52 @@
 	          			map: map,
 	          			draggable: true,
 	          			animation: google.maps.Animation.DROP,
-	          			label: 'CA.....',
-	          			title: 'Posicion Siguiente'
+	          			label: 'Sur',
+	          			title: 'Sur'
 	        		});
+	           		var marker3 = new google.maps.Marker({
+	          			position: pos3,
+	          			map: map,
+	          			draggable: true,
+	          			animation: google.maps.Animation.DROP,
+	          			label: 'carnaval de Paute',
+	          			title: 'orilla del rio'
+	        		});
+	           		var marker4 = new google.maps.Marker({
+	          			position: pos4,
+	          			map: map,
+	          			draggable: true,
+	          			animation: google.maps.Animation.DROP,
+	          			label: 'Carrera Warmi',
+	          			title: 'Evento Atletismo FFC WARMI'
+	        		});
+	           		var marker5 = new google.maps.Marker({
+	          			position: pos5,
+	          			map: map,
+	          			draggable: true,
+	          			animation: google.maps.Animation.DROP,
+	          			label: 'Carnaval feria Libre',
+	          			title: 'Evento comerciantes del mercado Feria Libre'
+	        		});
+	           		var marker6 = new google.maps.Marker({
+	          			position: pos6,
+	          			map: map,
+	          			draggable: true,
+	          			animation: google.maps.Animation.DROP,
+	          			label: 'Festival del Mote Pata',
+	          			title: 'Evento en Parroquia Tarqui'
+	        		});
+	           		var marker7 = new google.maps.Marker({
+	          			position: pos7,
+	          			map: map,
+	          			draggable: true,
+	          			animation: google.maps.Animation.DROP,
+	          			label: 'Taita Carnaval',
+	          			title: 'Evento en Cañar'
+	        		});
+	        		
 
-	           		google.maps.event.addListener(map, 'click', function(event) {
+	           		google.maps.event.addListener(map, 'doclick', function(event) {
 	            		addMarker(event.latLng, map);
 	            	});
 
@@ -112,11 +183,11 @@
 	            		});
 	            	}
 	            	
-	           		google.maps.event.addListener(marker1, 'click', function(event) {
+	           		google.maps.event.addListener(marker1, 'doclick', function(event) {
 						ruta(event.latLng);
 	            	});
 
-	           		google.maps.event.addListener(marker2, 'click', function(event) {
+	           		google.maps.event.addListener(marker2, 'doclick', function(event) {
 						ruta(event.latLng);
 	            	});
 	            	
