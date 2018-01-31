@@ -23,12 +23,24 @@ public class AsistenteControlador {
 	private Asistente asistente;
 	private List<Asistente> asistentes;
 	
+private int id;
 	
+
 	
 	@PostConstruct
 	public void init() {
 		asistente =  new Asistente();
 		loadAsistentes();
+		
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+		loadDatosEditar(id);
+		
 		
 	}
 	

@@ -9,7 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
+import javax.persistence.TypedQuery;
 
 import ups.edu.ec.modelo.Asistente;
 
@@ -23,8 +23,7 @@ public class AsistenteDAO {
 	public void guardar(Asistente asi) {
 		Asistente aux = leer(asi.getCodigo());
 		if(aux!=null){
-			insertar(asi);
-//			actulizar(asi);
+			actulizar(asi);
 		}else {
 			insertar(asi);
 		}
@@ -33,8 +32,8 @@ public class AsistenteDAO {
 	
 	public void insertar (Asistente asi) {
 		
-//		em.persist(asi);
-		em.merge(asi);
+	em.persist(asi);
+		//em.merge(asi);
 	}
 	
 	public void actulizar (Asistente asi) {
@@ -80,5 +79,13 @@ public class AsistenteDAO {
 		q.setParameter(2, passwrod);
 		List<Asistente> personas = q.getResultList();
 		return personas;
+	}
+	
+	//este es el que esta funcionandop como login ok
+	public List<Asistente> login(String email, String pass){
+		String sql="SELECT a FROM Asistente a WHERE a.email='"+email+"' AND a.password='"+pass+"'";
+		TypedQuery<Asistente> query =em.createQuery(sql,Asistente.class);
+		List<Asistente> asistentes=query.getResultList();
+		return asistentes;
 	}
 }

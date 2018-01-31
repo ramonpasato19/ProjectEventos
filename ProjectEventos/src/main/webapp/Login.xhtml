@@ -1,15 +1,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h1>JSF Login Logout - Example</h1>
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 
-<h:form id="myform">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
+     <link href="https://fonts.googleapis.com/css?subset=latin,cyrillic-ext" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/>
+
+    <!-- Bootstrap Core Css -->
+    <link href="resources/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+
+    <!-- Waves Effect Css -->
+    <link href="resources/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="resources/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="resources/css/style.css" rel="stylesheet"/>
+</head>
+
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">GUAMBRA-<b>RAYMI</b></a>
+            <small>lOGUEO DE ADMINISTRADOR</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                <h:form id="myform">
   
     <h:messages globalOnly="true" style="color:red;margin:8px;" />
   
@@ -19,5 +49,25 @@
     <h:inputSecret value="#{login.password}" /><br/><br/>
     <h:commandButton value="login" action="#{login.login}" />
 </h:form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="resources/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="resources/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="resources/plugins/node-waves/waves.js"></script>
+
+    <!-- Validation Plugin Js -->
+    <script src="resources/plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- Custom Js -->
+    <script src="resources/js/admin.js"></script>
+    <script src="resources/js/pages/examples/sign-in.js"></script>
+</body>
 
 </html>

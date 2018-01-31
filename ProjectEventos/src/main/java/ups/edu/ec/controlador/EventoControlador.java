@@ -10,15 +10,13 @@ import javax.inject.Inject;
 
 
 import ups.edu.ec.datos.ArtistaDAO;
-import ups.edu.ec.datos.CantonDAO;
+
 import ups.edu.ec.datos.EventoDAO;
 import ups.edu.ec.modelo.Artista;
 import ups.edu.ec.modelo.Asistente;
-import ups.edu.ec.modelo.Canton;
-import ups.edu.ec.modelo.Categoria;
-import ups.edu.ec.modelo.Concurso;
+
 import ups.edu.ec.modelo.Evento;
-import ups.edu.ec.modelo.Gastronomia;
+
 import ups.edu.ec.modelo.Parroquia;
 
 
@@ -26,28 +24,13 @@ import ups.edu.ec.modelo.Parroquia;
 //@SessionScoped
 @ViewScoped
 public class EventoControlador {
-        @Inject
+       
+	
+	@Inject
 	private EventoDAO evedao;
-        
-        @Inject
-    private CantonDAO candao;
-        
-        @Inject  
-    private ArtistaDAO artdao;
-    
-    
-	private Evento evento;
+    private Evento evento;
 	private List<Evento> eventos;
-	//------------------------------------------------
-	private List<Canton> cantones;
 	
-	private List<Artista> artistas;
-	
-
-	
-	private int idCantonSelecionado;
-	
-	private int idArtistaSeleccionado;
 	
 
 	
@@ -55,107 +38,10 @@ public class EventoControlador {
 	@PostConstruct
 	public void init() {
 		evento = new Evento();
-		
-		
-		
-		//------------------------------------------------
-		//------------------------------------------------
-		cantones=new ArrayList<Canton>();
-		artistas=new ArrayList<Artista>();
-		//------------------------------------------------
-		evento.addConcurso(new Concurso());
-		evento.addCategoria(new Categoria());
-		evento.addGastronomia(new Gastronomia());
-		//evento.addAsistente(new Asistente());
-		//------------------------------------------------
+		loadEventos();
+	
 	}
 	
-	
-	
-
-
-
-
-
-
-
-	public ArtistaDAO getArtdao() {
-		return artdao;
-	}
-
-
-
-
-
-
-
-
-
-
-	public void setArtdao(ArtistaDAO artdao) {
-		this.artdao = artdao;
-	}
-
-
-
-
-
-
-
-
-
-
-	public List<Artista> getArtistas() {
-		return artistas=artdao.listadoArtistas();
-	}
-
-
-
-
-
-	public void setArtistas(List<Artista> artistas) {
-		this.artistas = artistas;
-	}
-
-
-
-
-
-	public int getIdArtistaSeleccionado() {
-		return idArtistaSeleccionado;
-	}
-
-
-
-
-
-	public void setIdArtistaSeleccionado(int idArtistaSeleccionado) {
-		this.idArtistaSeleccionado = idArtistaSeleccionado;
-	}
-
-
-
-
-
-	public int getIdCantonSelecionado() {
-		return idCantonSelecionado;
-	}
-
-
-	public void setIdCantonSelecionado(int idCantonSelecionado) {
-		this.idCantonSelecionado = idCantonSelecionado;
-	}
-
-
-	public List<Canton> getCantones() {
-		return cantones=candao.listadoCantones();
-	}
-
-
-	public void setCantones(List<Canton> cantones) {
-		this.cantones = cantones;
-	}
-
 
 	public EventoDAO getEvedao() {
 		return evedao;
@@ -195,31 +81,10 @@ public class EventoControlador {
 		return "crear-evento";
 	}
 	
-	
-	
-	//-----------
-	
 
-
-	
-	//-----------
 	
 	public String guardar() {
-		Canton c=null;
-		Artista a=null;
-		for(Canton canton:cantones) {
-			if(canton.getCodigo()==idCantonSelecionado) {
-			c=canton;
-			break;
-			}
-		}
-		for(Artista artista:artistas) {
-			if(artista.getCodigo()==idArtistaSeleccionado) {
-				a=artista;
-			break;
-			}
-		}
-		evento.setArtista(a);
+		
 		//evento.setCanton(c);
 		System.out.println(evento);
 		evedao.guardar(evento);
@@ -235,35 +100,5 @@ public class EventoControlador {
 	}
 	
 	
-	//--------------------------------------------------------------------------------
-public String addConcurso() {
-		
-		evento.addConcurso(new Concurso());
-		return null;
-	}
-	
 
-	public String addCategoria() {
-		evento.addCategoria(new Categoria());
-		return null;
-	}
-	
-	
-	public String addGastronomia() {
-		evento.addGastronomia(new Gastronomia());
-		return null;
-	}
-	
-	/* public String addAsistente() {
-		evento.addAsistente(new Asistente());
-		return null; 
-		
-	}*/
-	
-//	public String addCanton() {
-//		evento.addCanton(new Canton());
-//		return null; 
-//	}
-	
-	//--------------------------------------------------------------------------------
 }

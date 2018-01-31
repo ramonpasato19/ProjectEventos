@@ -23,38 +23,21 @@ public class ArtistaControlador {
 	private List<Artista>artistas;
 	
 	private int id;
-	
-	
-	
+
 	@PostConstruct
 	public void init() {
 		artista= new Artista();
-		artista.addGenero(new Genero());
-		
-		//loadArtistas();
+		loadArtistas();
 	}
 	
-	
-	
-
-
 
 	public int getId() {
 		return id;
 	}
 
-
-
-
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
-
 
 
 	public ArtistaDAO getArtdao() {
@@ -110,11 +93,7 @@ public class ArtistaControlador {
 	}
 	
 	
-	public String addGenero() {
 	
-		artista.addGenero(new Genero());
-		return null;
-		}
 	
 
 }

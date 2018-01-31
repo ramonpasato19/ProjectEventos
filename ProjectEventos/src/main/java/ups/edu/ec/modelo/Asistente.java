@@ -23,7 +23,7 @@ public class Asistente implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8798414217986934925L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="asi_id")

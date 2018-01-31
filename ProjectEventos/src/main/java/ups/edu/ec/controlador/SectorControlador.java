@@ -9,6 +9,7 @@ import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import ups.edu.ec.datos.SectorDAO;
+import ups.edu.ec.modelo.Parroquia;
 import ups.edu.ec.modelo.Sector;
 
 @ManagedBean
@@ -19,10 +20,13 @@ public class SectorControlador {
 	private Sector sector;
 	private List<Sector> sectores;
 	
+	private int id;
+	
 	@PostConstruct
 	public void init() {
 		sector = new Sector();
-		loadSectores();
+		sector.addParroquia(new Parroquia());
+		//loadSectores();
 		
 	}
 		
@@ -75,5 +79,11 @@ public class SectorControlador {
 		loadSectores();
 		return "listado-sectores";
 	}
+	
+	
+	public String addParroquia() {
+		sector.addParroquia(new Parroquia());
+		return null;
+		}
 }
 

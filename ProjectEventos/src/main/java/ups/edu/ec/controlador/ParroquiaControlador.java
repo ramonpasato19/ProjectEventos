@@ -29,7 +29,7 @@ public class ParroquiaControlador {
 	@PostConstruct
 	public void init() {
 	parroquia = new Parroquia();
-	parroquia.addSector(new Sector());
+	loadParroquias();
 	
 	}
 
@@ -115,9 +115,9 @@ public class ParroquiaControlador {
 	}
 	
 	
-	public String addSector() {
-	parroquia.addSector(new Sector());
-	return null;
-	}
+	//public String addSector() {
+	//parroquia.addSector(new Sector());
+	//return null;
+	//}
 	
 }
